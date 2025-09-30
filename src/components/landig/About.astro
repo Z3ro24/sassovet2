@@ -1,0 +1,73 @@
+---
+import { GraduationCap, Award, Heart, Clock } from "@lucide/astro";
+import  Circle  from "../Circle.astro";
+
+---
+<section id="about" class="py-20 bg-gradient-to-r from-green-50 to-cyan-200">
+
+   
+  <div class="container px-8 mx-auto" >
+  <!-- Grid principal: 2 columnas -->
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-10 mx-auto ">
+
+    <!-- Columna izquierda: Info de la doctora -->
+    <div class="flex flex-col justify-center">
+      <span class="bg-teal-400 text-white px-3 py-1 rounded-full w-max text-sm font-semibold">
+        Sobre la Doctora
+      </span>
+      <h1 class="text-4xl font-bold text-primary mt-4">Fernanda Sasso</h1>
+      <p class="text-gray-400 mt-4">
+        Médico Veterinario dedicada al cuidado integral de mascotas, especializada en atención domiciliaria para brindar el mejor cuidado en un ambiente familiar y confortable.
+      </p>
+      <p class="text-gray-400 mt-4">
+        Mi pasión por los animales me llevó a especializarme en atención veterinaria a domicilio, entendiendo que muchas veces el traslado puede generar estrés innecesario en nuestras mascotas. Con años de experiencia, ofrezco un servicio profesional, cálido y personalizado.
+      </p>
+
+      <!-- Etiquetas -->
+      <!-- <div class="mt-6 flex flex-wrap gap-4 text-blue-600"> -->
+
+      <div class="mt-6 grid grid-cols-2 gap-2">
+        <div class="flex text-gray-400 items-center space-x-2">
+            <Circle  Icon={GraduationCap} sizeClass="h-8 w-8" />      
+                    
+               <span>Médico Veterinario Titulado</span>
+        </div>
+        <div class="flex text-gray-400 items-center space-x-2">
+          <Circle  Icon={Heart} sizeClass="h-8 w-8" /> 
+          <span>Especialista en atención domiciliaria</span>
+        </div>
+        <div class="flex text-gray-400 items-center space-x-2">
+          <Circle  Icon={Award} sizeClass="h-8 w-8" />     
+          <span>3+ años de experiencia</span>
+        </div>
+        <div class="flex text-gray-400 items-center space-x-2">
+          <Circle  Icon={Clock} sizeClass="h-8 w-8" /> 
+          <span>Disponible fines de semana</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Columna derecha: Estadísticas -->
+    <div class="grid grid-cols-2 gap-6 place-content-center text-center">
+      <div class="bg-white shadow-md p-6 rounded-lg">
+        <h2 class="text-3xl font-bold text-blue-600">200+</h2>
+        <p class="text-gray-600">Mascotas Atendidas</p>
+      </div>
+      <div class="bg-white shadow-md p-6 rounded-lg">
+        <h2 class="text-3xl font-bold text-green-600">3+</h2>
+        <p class="text-gray-600">Años de Experiencia</p>
+      </div>
+      <div class="bg-white shadow-md p-6 rounded-lg">
+        <h2 class="text-3xl font-bold text-blue-600">3</h2>
+        <p class="text-gray-600">Ciudades Atendidas</p>
+      </div>
+      <div class="bg-white shadow-md p-6 rounded-lg">
+        <h2 class="text-3xl font-bold text-green-600">98%</h2>
+        <p class="text-gray-600">Satisfacción</p>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+</section>

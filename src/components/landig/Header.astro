@@ -1,0 +1,66 @@
+      
+  <!-- <header class="w-full bg-background/95 backdrop-blur-sm border-b border-border sticky top-0 z-50">
+      <div class="container mx-auto px-4 py-4 flex items-center justify-between">
+        <div>
+            <img src="/flogosf.svg" class="flex items-center space-x-2" width="100" alt="Veterinaria a Domicilio">
+        </div>
+        <div class="flex items-center space-x-2">
+          <h1 class="text-2xl font-bold text-primary">
+            Veterinaria a Domicilio Dr.(a) Fernanda Sasso
+          </h1>
+        </div>
+        
+        <div class="hidden md:flex items-center space-x-6">
+          <div class="flex items-center space-x-2 text-vet-gray">
+            <span class="text-sm">Rancagua • Machalí</span>
+          </div>
+        
+        </div>
+      </div>
+    </header> -->
+---
+import { MapPin,Phone } from '@lucide/astro';
+---
+<script>
+  // Encuentra todos los botones con la clase `wsp` en la página.
+  const buttons = document.querySelectorAll('button.wsp');
+  buttons.forEach((button) => {
+    button.addEventListener('click', () => {
+      window.open("https://wa.me/56954047440");
+    });
+  });
+</script>
+
+
+<header class="bg-white sticky top-0 z-50 shadow-md">
+  {/* Contenedor principal para control de ancho */}
+  <div class="container mx-auto px-4 py-3 flex flex-col md:flex-row md:justify-between md:items-center">
+
+    {/* 1. Logo y Nombre de la Empresa (Mejorar con un <a> para el inicio) */}
+    <div class="flex items-center justify-center md:justify-start mb-2 md:mb-0">
+      {/* 💥 SEO MEJORA: Envolver el logo/nombre en un link <a> */}
+      <a href="/" class="flex items-center" aria-label="Ir a la página de inicio de Veterinaria Fernanda Sasso">
+        <img src="/foto3.jpg" alt="Logo Veterinaria Fernanda Sasso" class="h-12 w-12 object-cover rounded-full mr-2">
+        <span class="text-xl font-bold text-gray-800">Veterinaria Dr.(a) Sasso</span>
+      </a>
+    </div>
+
+    {/* 2. Información de Contacto y Lugares (Sección de utilidad, no <nav>) */}
+    <div class="flex flex-wrap justify-center md:justify-end items-center space-x-4">
+      
+      {/* 💥 SEO MEJORA: Colocar lugares clave como texto simple si no son links, pero usar etiquetas semánticas si se repiten 💥 */}
+      <div class="hidden sm:flex items-center space-x-1 text-gray-600 text-sm mr-4">
+        <MapPin class="w-4 h-4 text-blue-500" />
+        <span class="font-medium">Rancagua • Machalí</span>
+      </div>
+      
+      {/* 💥 SEO MEJORA: Envolver el botón en un link <a> para contacto/llamada 💥 */}
+      <a href="https://wa.me/56954047440" target="_blank" rel="noopener noreferrer" class="wsp flex items-center justify-center bg-green-500 text-white px-4 py-2 rounded-full text-base font-semibold shadow-lg hover:bg-green-600 transition-colors">
+        <Phone class="w-4 h-4 mr-2" />
+        Contactar (WhatsApp)
+      </a>
+    </div>
+
+  </div>
+</header>
+

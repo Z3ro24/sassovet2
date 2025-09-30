@@ -1,0 +1,27 @@
+@import "tailwindcss";
+
+@theme {
+  /*
+   * 💡 NOTA: Los valores HSL son Tono (0-360), Saturación (0-100%), Luminosidad (0-100%).
+   * Se usan 3 números separados por espacio, sin la función 'hsl()', ya que Tailwind
+   * la aplica automáticamente al leer la variable.
+   */
+
+  /* =======================================
+     Colores del Tema 'vet'
+     Estos corresponden a la configuración: vet: { blue: "hsl(var(--vet-blue))", ... }
+     ======================================= */
+  --vet-blue: 200 59% 30%; /* Ejemplo de Azul Oscuro */
+  --vet-blue-light: 200 80% 60%; /* Ejemplo de Azul Claro */
+  --vet-green: 140 50% 40%; /* Ejemplo de Verde */
+  --vet-green-light: 140 70% 70%; /* Ejemplo de Verde Claro */
+  --vet-navy: 220 40% 20%; /* Ejemplo de Azul Marino */
+  --vet-gray: 0 0% 50%; /* Ejemplo de Gris */
+
+  /* =======================================
+     Tus Colores Base (Convertidos a HSL)
+     ======================================= */
+  --color-primary: #2c3e50; /* Aproximado de tu color original #0a677af8 */
+  --color-secondary: #007bff; /* Gris medio (#808080) */
+  --color-gray-light: 0 0% 83%; /* Gris claro (#d3d3d3) */
+}

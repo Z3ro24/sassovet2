@@ -1,0 +1,57 @@
+---
+const {
+  title = "Veterinaria Fernanda Sasso",
+  description = "Veterinaria a domicilio en Rancagua y Machalí. Consultas, vacunación, emergencias y más. Atención rápida y profesional.",
+  url = "https://tusitio.cl",
+  image = "https://tusitio.cl/og-image.jpg",
+  type = "website",
+  locale = "es_CL"
+} = Astro.props;
+---
+
+<head>
+  <!-- 🔑 SEO BÁSICO -->
+  <title>{title}</title>
+  <meta name="description" content={description} />
+  <link rel="canonical" href={url} />
+
+  <!-- 🌍 Open Graph / Facebook -->
+  <meta property="og:type" content={type} />
+  <meta property="og:title" content={title} />
+  <meta property="og:description" content={description} />
+  <meta property="og:url" content={url} />
+  <meta property="og:image" content={image} />
+  <meta property="og:locale" content={locale} />
+
+  <!-- 🐦 Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content={title} />
+  <meta name="twitter:description" content={description} />
+  <meta name="twitter:image" content={image} />
+
+  <!-- 📱 Responsive -->
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- 📌 Idioma -->
+  <meta name="language" content="Spanish" />
+
+  <!-- 📊 JSON-LD: Veterinaria Local -->
+  <script type="application/ld+json">
+    {JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "VeterinaryCare",
+      name: "Veterinaria Fernanda Sasso",
+      image,
+      url,
+      telephone: "+56954047440",
+      email: "contacto@veterinariafs.cl",
+      address: {
+        "@type": "PostalAddress",
+        addressLocality: "Rancagua",
+        addressRegion: "O'Higgins",
+        addressCountry: "Chile"
+      },
+      areaServed: ["Rancagua", "Machalí"]
+    })}
+  </script>
+</head>

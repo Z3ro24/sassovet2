@@ -1,0 +1,70 @@
+---
+import { Heart, Phone, Mail, MapPin } from "@lucide/astro";
+---
+
+<footer id="footer" class="bg-gray-800 text-white py-12 md:py-16">
+  <div class="container mx-auto px-4">
+    
+    {/* GRID RESPONSIVO */}
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12 lg:gap-16">
+      
+      {/* 1. INFORMACIÓN PRINCIPAL */}
+      <div class="col-span-1 sm:col-span-2 space-y-4">
+        <h3 class="text-xl font-semibold mb-2 text-cyan-400">Veterinaria Fernanda Sasso</h3>
+        
+        <p class="text-gray-300 max-w-lg">
+          Cuidado veterinario profesional a domicilio en Rancagua y Machalí. 
+          Tu mascota merece el mejor cuidado en casa.
+        </p>
+        
+        <div class="flex items-center text-sm font-medium pt-2">
+          <Heart class="w-4 h-4 mr-1 text-red-500 flex-shrink-0" />
+          <span class="text-gray-400">Hecho con amor para las mascotas</span>
+        </div>
+      </div>
+
+      {/* 2. CONTACTO */}
+      <div class="space-y-4">
+        <h3 class="text-lg font-semibold mb-2 text-cyan-400">Contacto</h3>
+        
+        <ul class="space-y-2 text-gray-300">
+          <li class="flex items-start">
+            <Phone class="w-5 h-5 mr-3 text-blue-400 flex-shrink-0 mt-1" />
+            <div>
+              <p class="text-sm">+569 5404 7440</p>
+              <p class="text-xs text-gray-400">Llamada o WhatsApp</p>
+            </div>
+          </li>
+          
+          <li class="flex items-center">
+            <Mail class="w-5 h-5 mr-3 text-blue-400 flex-shrink-0" />
+            <p class="text-sm">contacto@veterinariafs.cl</p>
+          </li>
+          
+          <li class="flex items-start">
+            <MapPin class="w-5 h-5 mr-3 text-blue-400 flex-shrink-0 mt-1" />
+            <p class="text-sm">Rancagua y Machalí</p>
+          </li>
+        </ul>
+      </div>
+
+      {/* 3. SERVICIOS */}
+      <div class="space-y-4">
+        <h3 class="text-lg font-semibold mb-2 text-cyan-400">Servicios</h3>
+        <ul class="space-y-2 text-gray-300">
+          <li class="flex items-center text-sm"><span class="mr-2 text-cyan-400">&bull;</span> Corte de uñas</li>
+          <li class="flex items-center text-sm"><span class="mr-2 text-cyan-400">&bull;</span> Vacunación</li>
+          <li class="flex items-center text-sm"><span class="mr-2 text-cyan-400">&bull;</span> Consultas generales</li>
+          <li class="flex items-center text-sm"><span class="mr-2 text-cyan-400">&bull;</span> Control de salud</li>
+          <li class="flex items-center text-sm"><span class="mr-2 text-cyan-400">&bull;</span> Emergencias</li>
+          <li class="flex items-center text-sm"><span class="mr-2 text-cyan-400">&bull;</span> Atención a domicilio</li>
+        </ul>
+      </div>
+    </div>
+
+    {/* COPYRIGHT */}
+    <div class="border-t border-gray-700 mt-10 pt-6 text-center text-sm text-gray-500">
+      &copy; {new Date().getFullYear()} Veterinaria Fernanda Sasso. Todos los derechos reservados.
+    </div>
+  </div>
+</footer>

@@ -1,0 +1,48 @@
+---
+import Card2 from "../Card2.astro";
+import { Clock, MapPin } from "@lucide/astro";
+import Circle from "../Circle.astro";
+
+const services = [
+  {
+    icon: MapPin,
+    title: "Rancagua",
+    description: "Cobertura completa en toda la ciudad",
+    det: "Tiempo promedio: 20-35 min",
+  },
+  {
+    icon: MapPin,
+    title: "Machalí",
+    description: "Atención en sectores residenciales",
+    det: "Tiempo promedio: 30-45 min",
+  },
+];
+---
+
+<section id="covertura" aria-label="Zonas de atención veterinaria">
+  <div class="bg-gradient-to-r from-green-50 to-cyan-200 relative min-h-[70vh]">
+    <div class="container mx-auto px-4">
+      <!-- Título -->
+      <div class="text-center space-y-4 mb-12 sm:mb-16">
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-primary text-shadow-lg">
+          Zonas de Atención
+        </h2>
+        <p class="text-base sm:text-lg lg:text-xl text-gray-400 max-w-2xl mx-auto">
+          Atendemos en Rancagua y Machalí con tiempos de respuesta rápidos y servicio personalizado
+        </p>
+      </div>
+
+      <!-- Cards responsivas -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-8 lg:gap-10 max-w-4xl mx-auto">
+        {services.map((service) => (
+          <Card2 
+            Icon={service.icon}
+            title={service.title}
+            cont={service.description}
+            det={service.det}
+          />
+        ))}
+      </div>
+    </div>
+  </div>
+</section>

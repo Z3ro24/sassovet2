@@ -1,0 +1,31 @@
+---
+interface Props {
+  title?: string;
+  cont?: string; 
+  feature?: string[]; // La mantenemos opcional por si la usas en otros lados
+  Icon: any; 
+}
+
+const { title, cont, Icon } = Astro.props;
+---
+
+{/* 💥 AJUSTE CLAVE: max-w-xs y p-4 para ser más estrecha y compacta 💥 */}
+<div class="wrapper text-center max-w-xs p-4 rounded-xl overflow-hidden shadow-lg bg-white transition-transform duration-300 ease-in-out hover:scale-105 flex flex-col items-center h-full">
+  
+  {/* Ajustar el tamaño del círculo y el icono para que sean compactos */}
+  <div class="relative w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center mb-4">
+    <Icon class="text-blue-600" /> 
+  </div>
+  
+  {/* Fuente más pequeña y oscura para el TÍTULO */}
+  <div class="font-bold text-lg mb-1 text-gray-900">
+    {title}
+  </div>
+  
+  {/* Fuente pequeña para la DESCRIPCIÓN */}
+  <p class="text-gray-700 text-sm mb-4 flex-grow">
+    {cont}
+  </p>
+  
+  
+</div>

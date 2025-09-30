@@ -1,0 +1,76 @@
+---
+// import {Card}from 'card'
+import Card from '../Card.astro';
+import { Scissors, Syringe, Home, Stethoscope, Heart, Shield } from "@lucide/astro";
+
+const services = [
+  {
+    icon: Scissors,
+    title: "Corte de Uñas",
+    description: "Corte profesional y seguro de uñas para mantener la salud de las patas de tu mascota.",
+    features: ["Técnica especializada", "Herramientas esterilizadas", "Cuidado gentil"]
+  },
+  {
+    icon: Syringe,
+    title: "Vacunación",
+    description: "Programa completo de vacunas para proteger a tu mascota de enfermedades.",
+    features: ["Vacunas originales", "Calendario personalizado", "Certificado oficial"]
+  },
+  {
+    icon: Home,
+    title: "Atención a Domicilio",
+    description: "Consultas veterinarias en la comodidad de tu hogar, reduciendo el estrés de tu mascota.",
+    features: ["Sin traslados", "Ambiente familiar", "Horarios flexibles"]
+  },
+  {
+    icon: Stethoscope,
+    title: "Consulta General",
+    description: "Examen completo del estado de salud de tu mascota con diagnóstico profesional.",
+    features: ["Examen completo", "Diagnóstico preciso", "Recomendaciones"]
+  },
+  {
+    icon: Heart,
+    title: "Control de Salud",
+    description: "Seguimiento preventivo para mantener a tu mascota saludable y feliz.",
+    features: ["Prevención", "Seguimiento", "Consejos de cuidado"]
+  },
+  {
+    icon: Shield,
+    title: "Emergencias",
+    description: "Atención de urgencia para casos que requieren cuidado inmediato.",
+    features: ["Respuesta rápida", "Atención inmediata", "Disponibilidad extendida"]
+  }
+];
+---
+<section id="servicios" class="py-20 bg-gradient-to-r from-green-50 to-cyan-200"aria-label="Servicios a realizar">
+      <div class="container mx-auto px-4">
+        <div class="text-center space-y-4 mb-16">
+          <h2 class="text-4xl lg:text-5xl font-bold text-primary text-shadow-lg">
+            Nuestros Servicios
+          </h2>
+          <p class="text-xl text-gray-400 max-w-2xl mx-auto">
+            Ofrecemos una amplia gama de servicios veterinarios a domicilio 
+            para el cuidado integral de tu mascota
+          </p>
+        </div>
+   
+    
+   <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 px-4 sm:px-6 lg:px-8">
+    {services.map((service) => (
+      <div class="service-card">
+        {/* 💥 CAMBIO CLAVE: Pasar el icono como prop 'Icon' */}
+        <Card 
+          Icon={service.icon} 
+          title={service.title} 
+          cont={service.description} 
+          feature={service.features}
+        />
+        
+        {/* Eliminamos el renderizado dinámico directo aquí, 
+            ya que lo pasamos al Card */}
+        {/* <service.icon class="service-icon" /> */} 
+      </div>
+    ))}
+  </div>
+  </div>
+</section>
