@@ -1,5 +1,7 @@
 ---
 import { Phone, Clock, MapPin } from '@lucide/astro';
+import { Image } from 'astro:assets';
+import heroImage from '../../assets/foto2.webp';; 
 ---
 
 <script>
@@ -60,11 +62,15 @@ import { Phone, Clock, MapPin } from '@lucide/astro';
       <!-- Imagen -->
       <div class="relative animate-slide-up mt-8 sm:mt-0">
         <div class="relative rounded-2xl overflow-hidden shadow-hero">
-          <img 
-            src="/foto2.jpg"
-            alt="Veterinaria atendiendo una mascota en casa"
-            class="w-full h-[300px] sm:h-[450px] lg:h-[550px] object-cover object-[50%_40%]"
-          />
+           
+            <Image 
+              src={heroImage}
+              alt="Veterinaria atendiendo una mascota en casa"
+              class="w-full h-[300px] sm:h-[450px] lg:h-[550px] object-cover object-[50%_40%]"
+              
+              width={1200} 
+              height={800} 
+            />
           <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
         </div>
 
