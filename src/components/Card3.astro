@@ -1,31 +1,54 @@
 ---
+// 1. Definición de la interfaz de Props para TypeScript
 interface Props {
-  title?: string;
-  cont?: string; 
-  feature?: string[]; // La mantenemos opcional por si la usas en otros lados
-  Icon: any; 
+      Icon?: any;
+      title?: string;
+      value?: string;
+      action?: any;
 }
 
-const { title, cont, Icon } = Astro.props;
+
+
+const { title, value, action, Icon } = Astro.props;
+  const handleWhatsApp = () => {
+    window.open("https://wa.me/56912345678?text=Hola Doctora Fernanda, me interesa agendar una consulta veterinaria a domicilio para mi mascota", "_blank");
+  };
+
+  const handleCall = () => {
+    window.open("tel:+56912345678");
+  };
+   
+
 ---
 
-{/* 💥 AJUSTE CLAVE: max-w-xs y p-4 para ser más estrecha y compacta 💥 */}
-<div class="wrapper text-center max-w-xs p-4 rounded-xl overflow-hidden shadow-lg bg-white transition-transform duration-300 ease-in-out hover:scale-105 flex flex-col items-center h-full">
+<div
+  class="wrapper text-center w-full  sm:max-w-sm md:max-w-md 
+         rounded-xl overflow-hidden shadow-lg p-6 sm:p-8 bg-white 
+         transition-transform duration-300 ease-in-out 
+         hover:scale-105 flex flex-col items-center"
+>
+  <!-- 💥 1. CÍRCULO CON ICONO 💥 -->
+  <div
+    class="relative w-16 h-16 sm:w-20 sm:h-20 bg-blue-100 rounded-full 
+           flex items-center justify-center mb-4 sm:mb-6 
+           hover:bg-blue-50 transition-colors"
+  >
+   <a href={action} target="_blank" rel="noopener noreferrer" class="">
+    <Icon class="text-blue-600 w-8 h-8 sm:w-10 sm:h-10" />
+   
+      </a>
   
-  {/* Ajustar el tamaño del círculo y el icono para que sean compactos */}
-  <div class="relative w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center mb-4">
-    <Icon class="text-blue-600" /> 
   </div>
-  
-  {/* Fuente más pequeña y oscura para el TÍTULO */}
-  <div class="font-bold text-lg mb-1 text-gray-900">
+
+  <!-- 2. TÍTULO -->
+  <div class="font-bold text-lg sm:text-xl mb-2 text-gray-900">
     {title}
   </div>
-  
-  {/* Fuente pequeña para la DESCRIPCIÓN */}
-  <p class="text-gray-700 text-sm mb-4 flex-grow">
-    {cont}
+
+  <!-- 3. DESCRIPCIÓN -->
+  <p class="text-gray-700 text-sm sm:text-base mb-4 sm:mb-6 flex-grow">
+    {value}
   </p>
-  
-  
+
 </div>
+
