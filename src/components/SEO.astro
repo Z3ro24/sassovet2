@@ -3,7 +3,7 @@ const {
   title = "Veterinaria Fernanda Sasso",
   description = "Veterinaria a domicilio en Rancagua y Machalí. Consultas, vacunación, emergencias y más. Atención rápida y profesional.",
   url = "https://drasassovet.cl",
-  image = "https://drasassovet.cl/og-image.jpg",
+  image = "https://drasassovet.cl/_astro/foto2.DQJT7_xQ_2uj8Ns.webp",
   type = "website",
   locale = "es_CL"
 } = Astro.props;
@@ -36,22 +36,24 @@ const {
   <meta name="language" content="Spanish" />
 
   <!-- 📊 JSON-LD: Veterinaria Local -->
+<!-- 📊 JSON-LD: Veterinaria Local -->
   <script type="application/ld+json">
-    {JSON.stringify({
+    {
       "@context": "https://schema.org",
       "@type": "VeterinaryCare",
-      name: "Veterinaria Fernanda Sasso",
-      image,
-      url,
-      telephone: "+56954047440",
-      email: "f.sassovet@hotmail.com",
-      address: {
+      "name": "Veterinaria Fernanda Sasso",
+      "image": "https://drasassovet.cl/_astro/foto2.DQJT7_xQ_2uj8Ns.webp",
+      "url": "https://drasassovet.cl/",
+      "telephone": "+56954047440",
+      "email": "f.sassovet@hotmail.com",
+      "address": {
         "@type": "PostalAddress",
-        addressLocality: "Rancagua",
-        addressRegion: "O'Higgins",
-        addressCountry: "Chile"
+        "addressLocality": "Rancagua",
+        "addressRegion": "O'Higgins",
+        "addressCountry": "Chile"
       },
-      areaServed: ["Rancagua", "Machalí"]
-    })}
+      "areaServed": ["Rancagua", "Machalí"]
+    }
   </script>
+
 </head>
