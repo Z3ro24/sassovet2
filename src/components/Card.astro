@@ -1,38 +1,34 @@
 ---
 // 1. Definición de la interfaz de Props para TypeScript
 interface Props {
-  title?: string;
-  cont?: string; // Usaremos 'cont' para la descripción
-  feature?: string[]; // Array de strings (características)
-    Icon: any; 
+  title?: string
+  cont?: string // Usaremos 'cont' para la descripción
+  feature?: string[] // Array de strings (características)
+  Icon: any
 }
 
-
-
-const { title, cont, feature, Icon } = Astro.props;
-     
-
+const { title, cont, feature, Icon } = Astro.props
 ---
 
 <div
-  class="wrapper text-center w-full  sm:max-w-sm md:max-w-md 
-         rounded-xl overflow-hidden shadow-lg p-6 sm:p-8 bg-white 
-         transition-transform duration-300 ease-in-out 
+  class="wrapper text-center w-full sm:max-w-sm md:max-w-md
+         rounded-xl overflow-hidden shadow-lg p-6 sm:p-8 bg-white
+         transition-transform duration-300 ease-in-out
          hover:scale-105 flex flex-col items-center"
 >
   <!-- 💥 1. CÍRCULO CON ICONO 💥 -->
   <div
-    class="relative w-16 h-16 sm:w-20 sm:h-20 bg-blue-100 rounded-full 
-           flex items-center justify-center mb-4 sm:mb-6 
+    class="relative w-16 h-16 sm:w-20 sm:h-20 bg-blue-100 rounded-full
+           flex items-center justify-center mb-4 sm:mb-6
            hover:bg-blue-50 transition-colors"
   >
     <Icon class="text-blue-600 w-8 h-8 sm:w-10 sm:h-10" />
   </div>
 
-  <!-- 2. TÍTULO -->
-  <div class="font-bold text-lg sm:text-xl mb-2 text-gray-900">
+  <!-- 2. TÍTULO (semántico) -->
+  <h3 class="font-bold text-lg sm:text-xl mb-2 text-gray-900">
     {title}
-  </div>
+  </h3>
 
   <!-- 3. DESCRIPCIÓN -->
   <p class="text-gray-700 text-sm sm:text-base mb-4 sm:mb-6 flex-grow">
@@ -40,28 +36,29 @@ const { title, cont, feature, Icon } = Astro.props;
   </p>
 
   <!-- 4. LISTA DE CARACTERÍSTICAS -->
-  {feature && (
-    <ul class="text-gray-600 text-sm sm:text-base space-y-1 text-left w-full mb-4 sm:mb-6">
-      {feature.map((item) => (
-        <li class="flex items-start">
-          <svg
-            class="w-4 h-4 mr-2 text-green-500 flex-shrink-0 mt-0.5"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M5 13l4 4L19 7"
-            ></path>
-          </svg>
-          <span class="leading-tight">{item}</span>
-        </li>
-      ))}
-    </ul>
-  )}
+  {
+    feature && (
+      <ul class="text-gray-600 text-sm sm:text-base space-y-1 text-left w-full mb-4 sm:mb-6">
+        {feature.map((item) => (
+          <li class="flex items-start">
+            <svg
+              class="w-4 h-4 mr-2 text-green-500 flex-shrink-0 mt-0.5"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M5 13l4 4L19 7"
+              />
+            </svg>
+            <span class="leading-tight">{item}</span>
+          </li>
+        ))}
+      </ul>
+    )
+  }
 </div>
-

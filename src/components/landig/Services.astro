@@ -1,80 +1,135 @@
 ---
 // import {Card}from 'card'
-import Card from '../Card.astro';
-import { Scissors, Syringe, Home, Stethoscope, Heart, Shield } from "@lucide/astro";
+import Card from '../Card.astro'
+import {
+  Scissors,
+  Syringe,
+  Home,
+  Stethoscope,
+  Heart,
+  Shield
+} from '@lucide/astro'
 
 const services = [
   {
     icon: Scissors,
-    title: "Corte de Uñas",
-    description: "Corte profesional y seguro de uñas para mantener la salud de las patas de tu mascota.",
-    features: ["Técnica especializada", "Herramientas adecuadas", "Cuidado gentil"]
+    title: 'Corte de Uñas',
+    description:
+      'Corte profesional y seguro de uñas para mantener la salud de las patas de tu mascota.',
+    features: [
+      'Técnica especializada',
+      'Herramientas adecuadas',
+      'Cuidado gentil'
+    ]
   },
   {
     icon: Syringe,
-    title: "Vacunación",
-    description: "Programa completo de vacunas para proteger a tu mascota de diversas enfermedades.",
-    features: ["Vacunas originales", "Calendario personalizado", "Certificado oficial"]
+    title: 'Vacunación',
+    description:
+      'Programa completo de vacunas para proteger a tu mascota de diversas enfermedades.',
+    features: [
+      'Vacunas originales',
+      'Calendario personalizado',
+      'Certificado oficial'
+    ]
   },
   {
     icon: Home,
-    title: "Atención a Domicilio",
-    description: "Consultas veterinarias en la comodidad de tu hogar, reduciendo el estrés de tu mascota.",
-    features: ["Sin traslados", "Ambiente familiar", "Horarios flexibles"]
+    title: 'Atención a Domicilio',
+    description:
+      'Consultas veterinarias en la comodidad de tu hogar, reduciendo el estrés de tu mascota.',
+    features: ['Sin traslados', 'Ambiente familiar', 'Horarios flexibles']
   },
   {
     icon: Stethoscope,
-    title: "Consulta General",
-    description: "Examen completo del estado de salud de tu mascota con diagnóstico profesional.",
-    features: ["Examen completo", "Diagnóstico preciso", "Recomendaciones"]
+    title: 'Consulta General',
+    description:
+      'Examen completo del estado de salud de tu mascota con diagnóstico profesional.',
+    features: ['Examen completo', 'Diagnóstico preciso', 'Recomendaciones']
   },
   {
-  icon: Heart,
-  title: "Desparasitación",
-  description: "Mantén a tu mascota libre de parásitos internos y externos para cuidar su salud y bienestar general.",
-  features: [
-    "Desparasitación interna y externa",
-    "Control y seguimiento personalizado",
-    "Prevención de futuras infestaciones"
-  ]
- },
+    icon: Heart,
+    title: 'Desparasitación',
+    description:
+      'Mantén a tu mascota libre de parásitos internos y externos para cuidar su salud y bienestar general.',
+    features: [
+      'Desparasitación interna y externa',
+      'Control y seguimiento personalizado',
+      'Prevención de futuras infestaciones'
+    ]
+  },
   {
     icon: Shield,
-    title: "Examenes Preventivos",
-    description: "Toma de muestras y análisis para detectar problemas de salud a tiempo.",
-  features: ["Prevención y control", "Diagnósticos certeros","Detección temprana"]
+    title: 'Examenes Preventivos',
+    description:
+      'Toma de muestras y análisis para detectar problemas de salud a tiempo.',
+    features: [
+      'Prevención y control',
+      'Diagnósticos certeros',
+      'Detección temprana'
+    ]
   }
-];
+]
 ---
-<section id="servicios" class="py-20 bg-gradient-to-r from-white to-sky-200"aria-label="Servicios a realizar">
-      <div class="container mx-auto px-4">
-        <div class="text-center space-y-4 mb-16">
-          <h2 class="text-4xl lg:text-5xl font-bold text-primary text-shadow-lg">
-            Nuestros Servicios
-          </h2>
-          <p class="text-xl text-gray-400 max-w-2xl mx-auto">
-            Ofrecemos una amplia gama de servicios veterinarios a domicilio 
-            para el cuidado integral de tu mascota
+
+<section
+  id="servicios"
+  class="py-20 bg-gradient-to-r from-white to-sky-200"
+  aria-label="Servicios a realizar"
+>
+  <div class="container mx-auto px-4">
+    <div class="text-center space-y-4 mb-16">
+      <h2 class="text-4xl lg:text-5xl font-bold text-primary text-shadow-lg">
+        Nuestros Servicios
+      </h2>
+      <p class="text-xl text-gray-400 max-w-2xl mx-auto">
+        Ofrecemos una amplia gama de servicios veterinarios a domicilio en
+        <strong>Rancagua</strong> y Machalí para el cuidado integral de tu mascota.
+      </p>
+    </div>
+
+    <div
+      class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 px-4 sm:px-6 lg:px-8"
+    >
+      {
+        services.map((service) => (
+          <article class="service-card" aria-labelledby={service.title}>
+            {/* 💥 CAMBIO CLAVE: Pasar el icono como prop 'Icon' */}
+            <Card
+              Icon={service.icon}
+              title={service.title}
+              cont={service.description}
+              feature={service.features}
+            />
+          </article>
+        ))
+      }
+    </div>
+
+    <!-- Visible FAQ for users -->
+    <!-- <div class="mt-12 max-w-4xl mx-auto">
+      <h3 class="text-2xl font-bold mb-4">Preguntas frecuentes</h3>
+      <div class="space-y-4 text-gray-700">
+        <details>
+          <summary class="font-semibold cursor-pointer"
+            >¿Ofrecen atención a domicilio en Rancagua?</summary
+          >
+          <p class="mt-2">
+            Sí, cubrimos Rancagua y Machalí. Puedes agendar una visita llamando
+            al +56954047440.
           </p>
-        </div>
-   
-    
-   <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 px-4 sm:px-6 lg:px-8">
-    {services.map((service) => (
-      <div class="service-card">
-        {/* 💥 CAMBIO CLAVE: Pasar el icono como prop 'Icon' */}
-        <Card 
-          Icon={service.icon} 
-          title={service.title} 
-          cont={service.description} 
-          feature={service.features}
-        />
-        
-        {/* Eliminamos el renderizado dinámico directo aquí, 
-            ya que lo pasamos al Card */}
-        {/* <service.icon class="service-icon" /> */} 
+        </details>
+        <details>
+          <summary class="font-semibold cursor-pointer"
+            >¿Qué servicios se pueden realizar en casa?</summary
+          >
+          <p class="mt-2">
+            Consultas generales, vacunación, desparasitación, curaciones y
+            primeros auxilios. Para procedimientos complejos te indicaremos la
+            mejor opción.
+          </p>
+        </details>
       </div>
-    ))}
-  </div>
+    </div> -->
   </div>
 </section>

@@ -1,39 +1,37 @@
 ---
-import '../styles/global.css';
-import SEO from "../components/SEO.astro";
+import '../styles/global.css'
+import SEO from '../components/SEO.astro'
 ---
 
 <!doctype html>
 <html lang="es">
-	<head>
-				<meta charset="UTF-8" />
-				<meta name="viewport" content="width=device-width, initial-scale=1" />
-				<!-- <link rel="icon" type="image/svg+xml" href="/favicon.svg" /> -->
-				<link rel="icon" type="image/png"   href="/logo4.png" />
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- <link rel="icon" type="image/svg+xml" href="/favicon.svg" /> -->
+    <link rel="icon" type="image/png" href="/logo4.png" />
 
-				<meta name="generator" content={Astro.generator} />
-				<SEO
-					title="Veterinaria Fernanda Sasso | Atención Veterinaria a Domicilio en Rancagua y Machalí"
-					description="Cuidado veterinario profesional a domicilio. Consultas, vacunación, emergencias y más. Atención rápida y personalizada en Rancagua y Machalí."
-					url="https://drasassovet.cl"
-					image="https://drasassovet.cl/_astro/foto2.DQJT7_xQ_2uj8Ns.webp"
-				/>
-		</head>
-	<body>
-		<!-- <main class="mx-auto container"> -->
-		<main class="">
-
-			<slot />
-		</main>
-		
-	</body>
+    <meta name="generator" content={Astro.generator} />
+    <SEO
+      title="Veterinaria Fernanda Sasso | Atención Veterinaria a Domicilio en Rancagua y Machalí"
+      description="Cuidado veterinario profesional a domicilio. Consultas, vacunación, emergencias y más. Atención rápida y personalizada en Rancagua y Machalí."
+      url="https://drasassovet.cl"
+      image="https://drasassovet.cl/_astro/foto2.DQJT7_xQ_2uj8Ns.webp"
+    />
+  </head>
+  <body>
+    <!-- <main class="mx-auto container"> -->
+    <main class="">
+      <slot />
+    </main>
+  </body>
 </html>
 
 <style>
-	html,
-	body {
-		margin: 0;
-		width: 100%;
-		height: 100%;
-	}
+  html,
+  body {
+    margin: 0;
+    width: 100%;
+    height: 100%;
+  }
 </style>

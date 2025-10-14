@@ -1,32 +1,33 @@
 ---
-import SEO from "../components/SEO.astro";
+import SEO from '../components/SEO.astro'
 
 const {
-  title = "Veterinaria Fernanda Sasso | Atención Veterinaria a Domicilio en Rancagua y Machalí",
-  description = "Cuidado veterinario profesional a domicilio. Consultas, vacunación, emergencias y más. Atención rápida y personalizada en Rancagua y Machalí.",
-  url = "https://tusitio.cl",
-  image = "https://tusitio.cl/img/vet-og.jpg",
+  title = 'Veterinaria Fernanda Sasso | Atención Veterinaria a Domicilio en Rancagua y Machalí',
+  description = 'Cuidado veterinario profesional a domicilio. Consultas, vacunación, emergencias y más. Atención rápida y personalizada en Rancagua y Machalí.',
+  url = 'https://tusitio.cl',
+  image = 'https://tusitio.cl/img/vet-og.jpg',
   children
-} = Astro.props;
+} = Astro.props
 ---
 
 <html lang="es">
   <head>
-    <SEO
-      title={title}
-      description={description}
-      url={url}
-      image={image}
-    />
+    <SEO title={title} description={description} url={url} image={image} />
   </head>
   <body class="antialiased text-gray-900">
     <!-- 🌐 Header -->
     <header>
-      <nav class="container mx-auto px-4 py-4 flex justify-between items-center">
+      <nav
+        class="container mx-auto px-4 py-4 flex justify-between items-center"
+      >
         <a href="/" class="text-2xl font-bold text-primary">Veterinaria FS</a>
         <ul class="hidden md:flex gap-6 text-gray-700 font-medium">
-          <li><a href="#servicios" class="hover:text-secondary">Servicios</a></li>
-          <li><a href="#covertura" class="hover:text-secondary">Cobertura</a></li>
+          <li>
+            <a href="#servicios" class="hover:text-secondary">Servicios</a>
+          </li>
+          <li>
+            <a href="#covertura" class="hover:text-secondary">Cobertura</a>
+          </li>
           <li><a href="#footer" class="hover:text-secondary">Contacto</a></li>
         </ul>
       </nav>
@@ -39,8 +40,11 @@ const {
 
     <!-- 📌 Footer -->
     <footer class="bg-gray-800 text-white mt-12">
-      <div class="container mx-auto px-4 py-6 text-center text-sm text-gray-400">
-        &copy; {new Date().getFullYear()} Veterinaria Fernanda Sasso. Todos los derechos reservados.
+      <div
+        class="container mx-auto px-4 py-6 text-center text-sm text-gray-400"
+      >
+        &copy; {new Date().getFullYear()} Veterinaria Fernanda Sasso. Todos los derechos
+        reservados.
       </div>
     </footer>
   </body>

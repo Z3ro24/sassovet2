@@ -1,22 +1,21 @@
 ---
 // 1. Definición de la interfaz de Props
 interface Props {
-  Icon: any;
-  sizeClass?: string; 
+  Icon: any
+  sizeClass?: string
   // Agregamos una prop para el tamaño del icono (opcional)
-  iconSizeClass?: string; 
+  iconSizeClass?: string
 }
 
 // 2. Extracción de las props y definición de valores por defecto
-const { 
-    Icon, 
-    // Si no se pasa sizeClass, usa un valor por defecto (ej: w-12 h-12)
-    sizeClass = "w-12 h-12",
-    // Si no se pasa iconSizeClass, usa un valor por defecto (ej: w-6 h-6)
-    iconSizeClass = "w-6 h-6" 
-} = Astro.props;
+const {
+  Icon,
+  // Si no se pasa sizeClass, usa un valor por defecto (ej: w-12 h-12)
+  sizeClass = 'w-12 h-12',
+  // Si no se pasa iconSizeClass, usa un valor por defecto (ej: w-6 h-6)
+  iconSizeClass = 'w-6 h-6'
+} = Astro.props
 ---
-
 
 <div
   class={`relative ${sizeClass} bg-blue-100 rounded-full 
