@@ -1,3 +1,4 @@
 User-agent: *
-Disallow:
-Sitemap: https://drasassovet.cl/sitemap.xml
+Allow: /
+
+Sitemap: https://www.drasassovet.cl/sitemap.xml
