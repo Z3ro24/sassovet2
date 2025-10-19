@@ -1,6 +1,8 @@
 ---
 import '../styles/global.css'
 import SEO from '../components/SEO.astro'
+
+const pageSEOProps = Astro.props
 ---
 
 <!doctype html>
@@ -12,12 +14,7 @@ import SEO from '../components/SEO.astro'
     <link rel="icon" type="image/png" href="/logo4.png" />
 
     <meta name="generator" content={Astro.generator} />
-    <SEO
-      title="Atención Veterinaria a Domicilio en Rancagua y Machalí | Dra. Fernanda Sasso"
-      description="Veterinaria a domicilio en Rancagua y Machalí. Consultas, vacunas, desparasitación y cuidados para tus mascotas en la comodidad de tu hogar. Agenda tu visita con Dra. Fernanda Sasso"
-      url="https://drasassovet.cl"
-      image="https://drasassovet.cl/_astro/foto2.DQJT7_xQ_2uj8Ns.webp"
-    />
+    <SEO {...pageSEOProps} />
   </head>
   <body>
     <!-- <main class="mx-auto container"> -->
