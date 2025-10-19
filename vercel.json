@@ -1,0 +1,9 @@
+{
+  "redirects": [
+    {
+      "source": "./(.*)",
+      "destination": "https://www.drasassovet.cl/$1",
+      "permanent": true
+    }
+  ]
+}
