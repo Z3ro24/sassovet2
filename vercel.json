@@ -2,6 +2,12 @@
   "redirects": [
     {
       "source": "/(.*)",
+      "has": [
+        {
+          "type": "host",
+          "value": "drasassovet.cl"
+        }
+      ],
       "destination": "https://www.drasassovet.cl/$1",
       "permanent": true
     }
