@@ -11,9 +11,10 @@ import { Heart, Phone, Mail, MapPin, Instagram } from '@lucide/astro'
       {/* 1. INFORMACIÓN PRINCIPAL */}
       <div class="col-span-1 sm:col-span-2 space-y-4">
         <h3 class="text-xl font-semibold mb-2 text-cyan-400">
-          Veterinaria Fernanda Sasso - Atención a Domicilio Rancagua-Machali
+          Veterinaria Fernanda Sasso - Atención a Domicilio Rancagua | Machali
         </h3>
         <iframe
+          title="Sector de Atención a Domicilio Rancagua | Machali "
           src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d52823.790109790556!2d-70.70998780000001!3d-34.15946749999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8f6615e50cfee109%3A0x102c6dc54988f87e!2sVeterinaria%20Fernanda%20Sasso%20-%20Atenci%C3%B3n%20a%20Domicilio%20Rancagua-Machali!5e0!3m2!1ses-419!2scl!4v1760676485619!5m2!1ses-419!2scl"
           width="600"
           height="250"
@@ -71,7 +72,16 @@ import { Heart, Phone, Mail, MapPin, Instagram } from '@lucide/astro'
         <h3 class="text-lg font-semibold mb-2 text-cyan-400">Servicios</h3>
         <ul class="space-y-2 text-gray-300">
           <li class="flex items-center text-sm">
-            <span class="mr-2 text-cyan-400">&bull;</span> Corte de uñas
+            <a href="/rancagua" class="flex items-center">
+              <span class="mr-2 text-cyan-400">&bull;</span>
+              <span>Veterinaria a domicilio en Rancagua</span>
+            </a>
+          </li>
+          <li class="flex items-center text-sm">
+            <a href="/machali" class="flex items-center">
+              <span class="mr-2 text-cyan-400">&bull;</span>
+              <span>Veterinaria a domicilio en Machalí</span>
+            </a>
           </li>
           <li class="flex items-center text-sm">
             <span class="mr-2 text-cyan-400">&bull;</span> Vacunación
@@ -80,18 +90,8 @@ import { Heart, Phone, Mail, MapPin, Instagram } from '@lucide/astro'
             <span class="mr-2 text-cyan-400">&bull;</span> Consultas generales
           </li>
           <li class="flex items-center text-sm">
-            <span class="mr-2 text-cyan-400">&bull;</span> Control de salud
-          </li>
-          <li class="flex items-center text-sm">
-            <span class="mr-2 text-cyan-400">&bull;</span> Toma de muestras
-          </li>
-          <li class="flex items-center text-sm">
             <span class="mr-2 text-cyan-400">&bull;</span> Atención a domicilio
           </li>
-          <li class="flex items-center text-sm">
-            <span class="mr-2 text-cyan-400">&bull;</span> Veterinarios en Rancagua
-          </li>
-          <!-- link to veterinaros-rancagua removed -->
         </ul>
       </div>
     </div>

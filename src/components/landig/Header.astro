@@ -17,56 +17,52 @@ import { MapPin, Phone } from '@lucide/astro'
     name="google-site-verification"
     content="b58cdPOQa87DyC0NzATPAj_8FYBqF43web9jtAVrRUU"
   />
-  {/* Contenedor principal para control de ancho */}
-  <div
-    class="container mx-auto px-4 py-3 flex flex-col md:flex-row md:justify-between md:items-center"
-  >
-    {/* 1. Logo y Nombre de la Empresa (Mejorar con un <a> para el inicio) */}
-    <div class="flex items-center justify-center md:justify-start mb-2 md:mb-0">
-      {/* 💥 SEO MEJORA: Envolver el logo/nombre en un link <a> */}
-      <a
-        href="/"
-        class="flex items-center"
-        aria-label="Ir a la página de inicio de Veterinaria Fernanda Sasso"
-      >
+
+  <div class="container mx-auto px-4 py-3 flex items-center justify-between">
+    <!-- Logo -->
+    <div class="flex items-center">
+      <a href="/" class="flex items-center" aria-label="Ir al inicio">
         <img
           src="/foto3.svg"
-          alt="Logo de la Veterinaria Fernanda Sasso, atención veterinaria a domicilio en Rancagua y Machalí"
+          alt="Logo Veterinaria Fernanda Sasso - Atención a domicilio"
           width="48"
           height="48"
-          class="h-12 w-12 object-cover rounded-full mr-2"
+          class="h-12 w-12 object-cover rounded-full mr-3"
         />
-        <span class="text-xl font-bold text-gray-600"
-          >Veterinaria Fernanda Sasso - Atención a Domicilio</span
-        >
+        <span class="text-lg font-bold text-gray-700">Dra. Fernanda Sasso</span>
       </a>
     </div>
 
-    {/* 2. Información de Contacto y Lugares (Sección de utilidad, no <nav>) */}
-    <div
-      class="flex flex-wrap justify-center md:justify-end items-center space-x-4"
-    >
-      {
-        /* 💥 SEO MEJORA: Colocar lugares clave como texto simple si no son links, pero usar etiquetas semánticas si se repiten 💥 */
-      }
-      <div
-        class="hidden sm:flex items-center space-x-1 text-gray-600 text-sm mr-4"
+    <!-- Navegación principal -->
+    <nav aria-label="Menú principal" class="hidden md:flex items-center gap-6">
+      <a href="/" class="text-gray-600 hover:text-primary font-medium">Inicio</a
       >
+      <a href="/rancagua" class="text-gray-600 hover:text-primary font-medium"
+        >Rancagua</a
+      >
+      <a href="/machali" class="text-gray-600 hover:text-primary font-medium"
+        >Machalí</a
+      >
+      <a href="#contacto" class="text-gray-600 hover:text-primary font-medium"
+        >Contacto</a
+      >
+    </nav>
+
+    <!-- Info rápida + CTA -->
+    <div class="flex items-center space-x-4">
+      <div class="hidden sm:flex items-center space-x-2 text-gray-600 text-sm">
         <MapPin class="w-4 h-4 text-blue-500" />
-        <span class="font-medium">Rancagua • Machalí</span>
+        <span class="font-medium">Rancagua | Machalí</span>
       </div>
 
-      {
-        /* 💥 SEO MEJORA: Envolver el botón en un link <a> para contacto/llamada 💥 */
-      }
       <a
         href="https://wa.me/56954047440"
         target="_blank"
         rel="noopener noreferrer"
-        class="wsp flex items-center justify-center bg-green-500 text-white px-4 py-2 rounded-full text-base font-semibold shadow-lg hover:bg-green-600 transition-colors"
+        class="wsp flex items-center justify-center bg-green-500 text-white px-4 py-2 rounded-full text-sm font-semibold shadow hover:bg-green-600 transition-colors"
       >
         <Phone class="w-4 h-4 mr-2" />
-        Contactar (WhatsApp)
+        WhatsApp
       </a>
     </div>
   </div>
