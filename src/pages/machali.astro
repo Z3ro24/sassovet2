@@ -2,6 +2,9 @@
 import Layout from '../layouts/Layout.astro'
 import Header from '../components/landig/Header.astro'
 import Footeer from '../components/landig/Footer.astro'
+import { Phone, Clock, MapPin } from '@lucide/astro'
+import { Image } from 'astro:assets'
+import heroImage from '../assets/foto2.webp'
 
 const pageTitle = 'Veterinaria a domicilio en Machalí | Dra. Fernanda Sasso'
 const pageDescription =
@@ -19,64 +22,226 @@ const pageImage = 'https://drasassovet.cl/_astro/foto2.DQJT7_xQ_2uj8Ns.webp'
   <Header />
 
   <!-- HERO / INTRO -->
-  <section class="container mx-auto px-4 py-20">
-    <div class="max-w-4xl mx-auto text-center">
-      <h1 class="text-4xl md:text-5xl font-bold mb-4">
-        Veterinaria a domicilio en Machalí
-      </h1>
-      <p class="text-lg text-gray-600 mb-6">
-        Ofrecemos atención veterinaria en la comodidad de tu hogar en Machalí:
-        consultas, vacunación, manejo de urgencias y cuidados preventivos.
-        Nuestro enfoque es brindar tranquilidad a tu mascota y seguridad a ti
-        como propietario.
-      </p>
+  <section
+    class="relative min-h-[80vh] sm:min-h-[90vh] flex items-center bg-gradient-to-r from-white to-sky-200"
+  >
+    <div class="container mx-auto px-4 py-8 sm:py-16 lg:py-24">
+      <div class="grid lg:grid-cols-2 gap-8 sm:gap-12 items-center">
+        <!-- Contenido -->
+        <div class="space-y-6 sm:space-y-8 animate-fade-in">
+          <div class="space-y-3 sm:space-y-4">
+            <h1
+              class="text-shadow-lg text-2xl xs:text-3xl sm:text-4xl lg:text-6xl font-bold text-primary leading-tight"
+            >
+              Veterinaria a domicilio en Machalí
+              <!-- <span class="block text-secondary text-shadow-lg">
+                Cuidado profesional para tus mascotas en casa
+              </span> -->
+            </h1>
 
-      <div class="flex flex-col sm:flex-row justify-center gap-4">
-        <a
-          href="https://wa.me/56954047440"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="bg-green-500 text-white px-6 py-3 rounded-full font-semibold"
-          >Agendar por WhatsApp</a
-        >
-        <a
-          href="#servicios"
-          class="border border-gray-300 px-6 py-3 rounded-full">Ver servicios</a
-        >
+            <p
+              class="text-base sm:text-lg lg:text-xl text-gray-400 leading-relaxed max-w-lg"
+            >
+              Ofrecemos <strong
+                >atención veterinaria a domicilio en Machalí</strong
+              >, ideal para quienes buscan un <strong
+                >servicio veterinario profesional y personalizado</strong
+              >
+              sin mover a su mascota. Evita el estrés del traslado y recibe una
+              <strong>consulta veterinaria</strong> completa en la comodidad de tu
+              hogar.
+              <br />
+              <a
+                href="#contacto"
+                class="text-secondary font-semibold underline hover:text-primary"
+              >
+                Agenda tu atención veterinaria a domicilio hoy mismo
+              </a>.
+            </p>
+          </div>
+
+          <!-- Info rápida -->
+          <div
+            class="grid grid-cols-1 sm:grid-cols-3 gap-4 text-sm sm:text-base"
+          >
+            <div class="flex items-center space-x-2 text-vet-gray">
+              <MapPin class="w-5 h-5 text-secondary" />
+              <span class="text-gray-400">Cobertura en Machalí</span>
+            </div>
+            <div class="flex items-center space-x-2 text-vet-gray">
+              <Clock class="w-5 h-5 text-secondary" />
+              <span class="text-gray-400">Horarios flexibles</span>
+            </div>
+            <div class="flex items-center space-x-2 text-vet-gray">
+              <Phone class="w-5 h-5 text-secondary" />
+              <span class="text-gray-400">Consultas inmediatas</span>
+            </div>
+          </div>
+
+          <!-- Botones CTA -->
+          <div class="flex flex-col sm:flex-row gap-4 mt-4">
+            <a
+              href="https://wa.me/56954047440"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="w-full sm:w-auto flex items-center justify-center bg-blue-600 text-white px-6 py-3 rounded-full text-lg font-semibold shadow-lg hover:bg-blue-700"
+            >
+              Agendar consulta ahora
+            </a>
+
+            <a
+              href="#servicios"
+              class="w-full sm:w-auto flex items-center justify-center border-2 border-blue-600 text-blue-600 px-6 py-3 rounded-full text-lg font-semibold hover:bg-blue-600 hover:text-white transition"
+            >
+              Ver servicios
+            </a>
+          </div>
+        </div>
+
+        <!-- Imagen -->
+        <div class="relative animate-slide-up mt-8 sm:mt-0">
+          <div class="relative rounded-2xl overflow-hidden shadow-hero">
+            <Image
+              src={heroImage}
+              alt="Veterinaria a domicilio en Machalí - Dra. Sasso Vet"
+              class="w-full h-[300px] sm:h-[450px] lg:h-[550px] object-cover object-[50%_40%]"
+              width={600}
+              height={800}
+              sizes="(max-width: 600px) 600px, (max-width: 900px) 900px, 1200px"
+            />
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"
+            >
+            </div>
+          </div>
+
+          <!-- Floating card -->
+          <div
+            class="bg-white absolute -bottom-6 -left-6 sm:-left-12 bg-card border-border rounded-xl p-4 sm:p-6 shadow-xl animate-bounce"
+          >
+            <div class="text-center space-y-1 sm:space-y-2">
+              <div class="text-xl sm:text-2xl font-bold text-secondary">
+                +300
+              </div>
+              <div class="text-xs sm:text-sm text-gray-400">
+                Mascotas atendidas
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
   <!-- POR QUÉ ELEGIR ATENCIÓN A DOMICILIO -->
-  <section class="bg-gray-50 py-12">
-    <div class="container mx-auto px-4 max-w-4xl">
-      <h2 class="text-2xl font-semibold mb-4">
-        ¿Por qué elegirnos en Machalí?
-      </h2>
-      <p class="text-gray-700 mb-4">
-        La atención a domicilio reduce el estrés de la mascota, permite observar
-        comportamientos en su entorno natural y facilita explicaciones prácticas
-        al propietario. En Machalí trabajamos con tiempos razonables y
-        protocolos de higiene y seguridad.
-      </p>
+  <section class="py-16 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto text-center mb-12">
+        <h2 class="text-3xl sm:text-4xl font-bold text-primary mb-4">
+          ¿Por qué elegirnos para atención veterinaria en Machalí?
+        </h2>
+        <p class="text-lg text-gray-600">
+          Experiencia y profesionalismo al servicio de tu mascota, directamente
+          en tu hogar
+        </p>
+      </div>
 
-      <div class="grid md:grid-cols-3 gap-6 mt-6">
-        <div>
-          <h3 class="font-semibold">Comodidad</h3>
-          <p class="text-gray-600 text-sm">
-            Recibe atención profesional sin salir de tu casa.
+      <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+        <!-- Comodidad -->
+        <div
+          class="bg-gray-50 rounded-2xl p-8 text-center hover:shadow-lg transition-shadow"
+        >
+          <div
+            class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-6"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-8 w-8 text-blue-600"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"
+              ></path>
+            </svg>
+          </div>
+          <h3 class="text-xl font-semibold text-primary mb-3">
+            Comodidad total
+          </h3>
+          <p class="text-gray-600">
+            Atención veterinaria profesional en la tranquilidad de tu hogar, sin
+            necesidad de traslados
           </p>
         </div>
-        <div>
-          <h3 class="font-semibold">Confianza</h3>
-          <p class="text-gray-600 text-sm">
-            Explicaciones claras y seguimiento post-visita.
+
+        <!-- Confianza -->
+        <div
+          class="bg-gray-50 rounded-2xl p-8 text-center hover:shadow-lg transition-shadow"
+        >
+          <div
+            class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-8 w-8 text-green-600"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"
+              ></path>
+            </svg>
+          </div>
+          <h3 class="text-xl font-semibold text-primary mb-3">
+            Máxima confianza
+          </h3>
+          <p class="text-gray-600">
+            Comunicación clara y seguimiento personalizado para asegurar la
+            recuperación de tu mascota
           </p>
         </div>
-        <div>
-          <h3 class="font-semibold">Cercanía</h3>
-          <p class="text-gray-600 text-sm">
-            Tiempos de respuesta adaptados a Machalí.
+
+        <!-- Cercanía -->
+        <div
+          class="bg-gray-50 rounded-2xl p-8 text-center hover:shadow-lg transition-shadow"
+        >
+          <div
+            class="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-6"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-8 w-8 text-purple-600"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+              ></path>
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+            </svg>
+          </div>
+          <h3 class="text-xl font-semibold text-primary mb-3">
+            Servicio local
+          </h3>
+          <p class="text-gray-600">
+            Atención rápida y eficiente adaptada a las necesidades específicas
+            de Machalí
           </p>
         </div>
       </div>
@@ -84,43 +249,153 @@ const pageImage = 'https://drasassovet.cl/_astro/foto2.DQJT7_xQ_2uj8Ns.webp'
   </section>
 
   <!-- SERVICIOS DETALLADOS -->
-  <section id="servicios" class="py-12">
-    <div class="container mx-auto px-4 max-w-4xl">
-      <h2 class="text-2xl font-semibold mb-4">
-        Servicios que ofrecemos en Machalí
-      </h2>
-      <div class="space-y-6 text-gray-700">
-        <article>
-          <h3 class="font-semibold">Consultas generales a domicilio</h3>
-          <p class="text-sm">
-            Valoración completa, diagnóstico inicial y plan de manejo. Ideal
-            para control de enfermedades crónicas y revisiones rutinarias.
-          </p>
-        </article>
+  <section id="servicios" class="py-16 bg-gray-50">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto text-center mb-12">
+        <h2 class="text-3xl sm:text-4xl font-bold text-primary mb-4">
+          Servicios veterinarios a domicilio en Machalí
+        </h2>
+        <p class="text-lg text-gray-600">
+          Cuidado profesional y personalizado para tus mascotas, directamente en
+          tu hogar
+        </p>
+      </div>
 
-        <article>
-          <h3 class="font-semibold">Vacunación y desparasitación</h3>
-          <p class="text-sm">
-            Programas de vacunación adaptados a la edad y estilo de vida de la
-            mascota, además de desparasitación interior y exterior.
+      <div
+        class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 lg:gap-8 max-w-6xl mx-auto"
+      >
+        <!-- Consultas -->
+        <div
+          class="bg-white rounded-xl sm:rounded-2xl p-4 sm:p-6 shadow-lg hover:shadow-xl transition-shadow"
+        >
+          <div
+            class="h-12 w-12 sm:h-14 sm:w-14 bg-blue-100 rounded-xl flex items-center justify-center mb-3 sm:mb-4"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-8 w-8 text-secondary"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
+              ></path>
+            </svg>
+          </div>
+          <h3 class="text-xl font-semibold text-primary mb-2">
+            Consultas generales
+          </h3>
+          <p class="text-gray-600">
+            Evaluación completa de salud con examen físico, diagnóstico y plan
+            personalizado
           </p>
-        </article>
+        </div>
 
-        <article>
-          <h3 class="font-semibold">Atención de urgencias</h3>
-          <p class="text-sm">
-            Soporte inicial en domicilio y coordinación de traslados si es
-            necesario.
+        <!-- Vacunación -->
+        <div
+          class="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-shadow"
+        >
+          <div
+            class="h-14 w-14 bg-green-100 rounded-xl flex items-center justify-center mb-4"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-8 w-8 text-green-600"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"
+              ></path>
+            </svg>
+          </div>
+          <h3 class="text-xl font-semibold text-primary mb-2">
+            Vacunación y prevención
+          </h3>
+          <p class="text-gray-600">
+            Programas personalizados de vacunación y planes de desparasitación
           </p>
-        </article>
+        </div>
 
-        <article>
-          <h3 class="font-semibold">Cuidados estéticos y preventivos</h3>
-          <p class="text-sm">
-            Corte de uñas, higiene, curaciones y toma de muestras para análisis
-            en domicilio.
+        <!-- Urgencias -->
+        <div
+          class="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-shadow"
+        >
+          <div
+            class="h-14 w-14 bg-red-100 rounded-xl flex items-center justify-center mb-4"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-8 w-8 text-red-600"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+            </svg>
+          </div>
+          <h3 class="text-xl font-semibold text-primary mb-2">
+            Atención de urgencias
+          </h3>
+          <p class="text-gray-600">
+            Manejo inicial de emergencias y coordinación de traslados si es
+            necesario
           </p>
-        </article>
+        </div>
+
+        <!-- Preventivos -->
+        <div
+          class="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-shadow"
+        >
+          <div
+            class="h-14 w-14 bg-purple-100 rounded-xl flex items-center justify-center mb-4"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-8 w-8 text-purple-600"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"
+              ></path>
+            </svg>
+          </div>
+          <h3 class="text-xl font-semibold text-primary mb-2">
+            Cuidados preventivos
+          </h3>
+          <p class="text-gray-600">
+            Servicios de higiene, curaciones y toma de muestras en domicilio
+          </p>
+        </div>
+      </div>
+
+      <!-- CTA -->
+      <div class="text-center mt-12">
+        <a
+          href="https://wa.me/56954047440"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex items-center justify-center bg-blue-600 text-white px-8 py-3 rounded-full text-lg font-semibold shadow-lg hover:bg-blue-700 transition"
+        >
+          Consultar disponibilidad
+        </a>
       </div>
     </div>
   </section>
@@ -223,19 +498,82 @@ const pageImage = 'https://drasassovet.cl/_astro/foto2.DQJT7_xQ_2uj8Ns.webp'
   </script>
 
   <!-- CONTACTO RÁPIDO -->
-  <section class="py-12 bg-gray-50" id="contacto">
-    <div class="container mx-auto px-4 max-w-3xl text-center">
-      <h3 class="text-xl font-semibold mb-3">Contacto rápido</h3>
-      <p class="text-gray-600 mb-4">
-        Escríbenos por WhatsApp y agenda la visita a domicilio en Machalí.
-      </p>
-      <a
-        href="https://wa.me/56954047440"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="bg-green-500 text-white px-6 py-3 rounded-full font-semibold"
-        >WhatsApp: +569 5404 7440</a
-      >
+  <section
+    class="py-8 sm:py-16 bg-gradient-to-br from-blue-600 to-blue-800"
+    id="contacto"
+  >
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto text-center">
+        <div
+          class="bg-white rounded-xl sm:rounded-2xl shadow-xl p-4 sm:p-8 md:p-12"
+        >
+          <h2
+            class="text-2xl sm:text-3xl md:text-4xl font-bold text-primary mb-3 sm:mb-4"
+          >
+            ¿Necesitas atención veterinaria en Machalí?
+          </h2>
+          <p class="text-lg text-gray-600 mb-8">
+            Estamos listos para atender a tu mascota. Contáctanos ahora y agenda
+            tu visita a domicilio
+          </p>
+
+          <div class="grid sm:grid-cols-2 gap-6 mb-8">
+            <div class="bg-gray-50 rounded-xl p-6">
+              <div
+                class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4"
+              >
+                <Clock class="w-6 h-6 text-blue-600" />
+              </div>
+              <h3 class="font-semibold text-lg mb-2">Horario flexible</h3>
+              <p class="text-gray-600">
+                Adaptamos nuestros horarios a tu disponibilidad
+              </p>
+            </div>
+
+            <div class="bg-gray-50 rounded-xl p-6">
+              <div
+                class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4"
+              >
+                <MapPin class="w-6 h-6 text-green-600" />
+              </div>
+              <h3 class="font-semibold text-lg mb-2">Cobertura total</h3>
+              <p class="text-gray-600">
+                Servicio disponible en toda la comuna de Machalí
+              </p>
+            </div>
+          </div>
+
+          <div
+            class="flex flex-col sm:flex-row items-center justify-center gap-4"
+          >
+            <a
+              href="https://wa.me/56954047440"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="w-full sm:w-auto inline-flex items-center justify-center bg-green-500 hover:bg-green-600 text-white px-8 py-4 rounded-full text-lg font-semibold transition-colors"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-6 w-6 mr-2"
+                fill="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"
+                ></path>
+              </svg>
+              WhatsApp: +569 5404 7440
+            </a>
+
+            <button
+              class="wsp w-full sm:w-auto inline-flex items-center justify-center border-2 border-blue-600 text-blue-600 px-8 py-4 rounded-full text-lg font-semibold hover:bg-blue-600 hover:text-white transition-colors"
+            >
+              <Phone class="w-6 h-6 mr-2" />
+              Llamar ahora
+            </button>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
