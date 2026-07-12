@@ -1,5 +1,4 @@
 ---
-// import {Card}from 'card'
 import Card from '../Card.astro'
 import {
   Scissors,
@@ -7,7 +6,9 @@ import {
   Home,
   Stethoscope,
   Heart,
-  Shield
+  Shield,
+  Microchip,
+  Cross
 } from '@lucide/astro'
 
 const services = [
@@ -60,13 +61,35 @@ const services = [
   },
   {
     icon: Shield,
-    title: 'Examenes Preventivos',
+    title: 'Cuidados Preventivos',
     description:
-      'Toma de muestras y análisis para detectar problemas de salud a tiempo.',
+      'Higiene, curaciones y toma de muestras en domicilio para mantener a tu mascota sana.',
     features: [
       'Prevención y control',
       'Diagnósticos certeros',
       'Detección temprana'
+    ]
+  },
+  {
+    icon: Microchip,
+    title: 'Implantación de Microchip',
+    description:
+      'Registro e identificación oficial de tu mascota en la comodidad de tu hogar, cumpliendo con la normativa vigente.',
+    features: [
+      'Identificación permanente',
+      'Registro oficial',
+      'Procedimiento seguro'
+    ]
+  },
+  {
+    icon: Cross,
+    title: 'Eutanasia',
+    description:
+      'Servicio humanitario con acompañamiento profesional y respeto por el bienestar animal en tu hogar.',
+    features: [
+      'Criterio profesional',
+      'Acompañamiento',
+      'Respeto y dignidad'
     ]
   }
 ]
@@ -80,7 +103,7 @@ const services = [
   <div class="container mx-auto px-4">
     <div class="text-center space-y-4 mb-16">
       <h2 class="text-4xl lg:text-5xl font-bold text-primary text-shadow-lg">
-        Servicios Veterinarios a Domicilio en Rancagua y Machalí
+        Servicios Veterinarios a Domicilio en Rancagua, Machalí y Olivar
       </h2>
       <p class="text-xl text-gray-400 max-w-2xl mx-auto">
         Realizamos vacunas, controles, desparasitación, tratamientos y más —
@@ -94,7 +117,6 @@ const services = [
       {
         services.map((service) => (
           <article class="service-card" aria-labelledby={service.title}>
-            {/* 💥 CAMBIO CLAVE: Pasar el icono como prop 'Icon' */}
             <Card
               Icon={service.icon}
               title={service.title}
@@ -105,31 +127,5 @@ const services = [
         ))
       }
     </div>
-
-    <!-- Visible FAQ for users -->
-    <!-- <div class="mt-12 max-w-4xl mx-auto">
-      <h3 class="text-2xl font-bold mb-4">Preguntas frecuentes</h3>
-      <div class="space-y-4 text-gray-700">
-        <details>
-          <summary class="font-semibold cursor-pointer"
-            >¿Ofrecen atención a domicilio en Rancagua?</summary
-          >
-          <p class="mt-2">
-            Sí, cubrimos Rancagua y Machalí. Puedes agendar una visita llamando
-            al +56954047440.
-          </p>
-        </details>
-        <details>
-          <summary class="font-semibold cursor-pointer"
-            >¿Qué servicios se pueden realizar en casa?</summary
-          >
-          <p class="mt-2">
-            Consultas generales, vacunación, desparasitación, curaciones y
-            primeros auxilios. Para procedimientos complejos te indicaremos la
-            mejor opción.
-          </p>
-        </details>
-      </div>
-    </div> -->
   </div>
 </section>

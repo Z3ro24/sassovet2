@@ -1,0 +1,17 @@
+---
+import Layout from '../layouts/Layout.astro'
+import Header from '../components/landig/Header.astro'
+import Footeer from '../components/landig/Footer.astro'
+import Contact from '../components/landig/Contact.astro'
+
+const pageTitle = 'Contacto | Dra. Fernanda Sasso - Veterinaria a Domicilio'
+const pageDescription =
+  'Contacta a la Dra. Fernanda Sasso para servicios veterinarios a domicilio en Rancagua, Machalí y Olivar. WhatsApp, teléfono y email.'
+const pageUrl = 'https://www.drasassovet.cl/contacto'
+---
+
+<Layout title={pageTitle} description={pageDescription} url={pageUrl}>
+  <Header />
+  <Contact />
+  <Footeer />
+</Layout>

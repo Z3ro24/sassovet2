@@ -1,15 +1,12 @@
 ---
 import Layout from '../layouts/Layout.astro'
-import Card from '../components/Card.astro'
 import About from '../components/landig/About.astro'
 import Hero from '../components/landig/Hero.astro'
 import Header from '../components/landig/Header.astro'
-import Services from '../components/landig/Services.astro'
 import Footeer from '../components/landig/Footer.astro'
 import Coverage from '../components/landig/Coverage.astro'
 import Contact from '../components/landig/Contact.astro'
 
-// Page-specific SEO overrides (include local keyword)
 const pageTitle =
   'Atención Veterinaria a Domicilio en Rancagua y Machalí | Dra. Fernanda Sasso'
 const pageDescription =
@@ -24,9 +21,8 @@ const pageImage = 'https://drasassovet.cl/_astro/foto2.DQJT7_xQ_2uj8Ns.webp'
   url={pageUrl}
   image={pageImage}
 >
-  <Header />
+  <Header contactHref="#contacto" />
   <Hero />
-  <Services />
   <About />
   <Coverage />
   <Contact />

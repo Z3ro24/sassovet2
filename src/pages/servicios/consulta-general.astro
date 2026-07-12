@@ -1,0 +1,37 @@
+---
+import Layout from '../../layouts/Layout.astro'
+import Header from '../../components/landig/Header.astro'
+import Footeer from '../../components/landig/Footer.astro'
+const title = 'Consulta general a domicilio'
+const description =
+  'Evaluación completa de salud, diagnóstico y recomendaciones personalizadas para tu mascota en la comodidad de tu hogar.'
+const price = '$25.000 (orientativo)'
+---
+
+<Layout title={title} description={description}>
+  <Header />
+  <section class="container mx-auto px-4 py-12 max-w-3xl">
+    <h1 class="text-3xl font-bold mb-2">{title}</h1>
+    <h2 class="text-xl text-gray-500 mb-6">Servicio veterinario a domicilio</h2>
+    <p class="text-gray-700 mb-6">{description}</p>
+
+    <h2 class="text-xl font-semibold mb-2">Qué incluye</h2>
+    <ul class="list-disc list-inside mb-6 text-gray-700">
+      <li>Examen físico completo</li>
+      <li>Diagnóstico básico y plan de tratamiento</li>
+      <li>Consejos de cuidado y prevención</li>
+    </ul>
+
+    <p class="text-lg font-semibold mb-6">Precio orientativo: {price}</p>
+
+    <a
+      href="https://wa.me/56954047440?text=Hola,%20quiero%20agendar%20una%20consulta%20general"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="inline-flex items-center justify-center bg-blue-600 text-white px-6 py-3 rounded-full shadow hover:bg-blue-700 transition"
+    >
+      Agendar por WhatsApp
+    </a>
+  </section>
+  <Footeer />
+</Layout>
