@@ -3,17 +3,23 @@
 // @ts-check
 import { defineConfig } from "astro/config";
 import tailwindcss from "@tailwindcss/vite";
-
-// ... (No necesitamos el tailwindConfig aquí si usamos el archivo de configuración)
+import sitemap from "@astrojs/sitemap";
 
 // https://astro.build/config
 export default defineConfig({
-  output: "static", // ✅ así debe estar
+  output: "static",
+  site: "https://www.drasassovet.cl",
   devToolbar: {
     enabled: false,
   },
+  integrations: [
+    sitemap({
+      changefreq: "weekly",
+      priority: 0.7,
+      lastmod: new Date(),
+    }),
+  ],
   vite: {
-    // CORRECCIÓN: Llamar a tailwindcss() sin argumentos
     plugins: [tailwindcss()],
   },
 });

@@ -21,7 +21,8 @@ const services = [
       'Técnica especializada',
       'Herramientas adecuadas',
       'Cuidado gentil'
-    ]
+    ],
+    href: '/servicios'
   },
   {
     icon: Syringe,
@@ -32,21 +33,24 @@ const services = [
       'Vacunas originales',
       'Calendario personalizado',
       'Certificado oficial'
-    ]
+    ],
+    href: '/servicios/vacunacion'
   },
   {
     icon: Home,
     title: 'Atención a Domicilio',
     description:
       'Consultas veterinarias en la comodidad de tu hogar, reduciendo el estrés de tu mascota.',
-    features: ['Sin traslados', 'Ambiente familiar', 'Horarios flexibles']
+    features: ['Sin traslados', 'Ambiente familiar', 'Horarios flexibles'],
+    href: '/servicios'
   },
   {
     icon: Stethoscope,
     title: 'Consulta General',
     description:
       'Examen completo del estado de salud de tu mascota con diagnóstico profesional.',
-    features: ['Examen completo', 'Diagnóstico preciso', 'Recomendaciones']
+    features: ['Examen completo', 'Diagnóstico preciso', 'Recomendaciones'],
+    href: '/servicios/consulta-general'
   },
   {
     icon: Heart,
@@ -57,7 +61,8 @@ const services = [
       'Desparasitación interna y externa',
       'Control y seguimiento personalizado',
       'Prevención de futuras infestaciones'
-    ]
+    ],
+    href: '/servicios'
   },
   {
     icon: Shield,
@@ -68,7 +73,8 @@ const services = [
       'Prevención y control',
       'Diagnósticos certeros',
       'Detección temprana'
-    ]
+    ],
+    href: '/servicios/cuidados-preventivos'
   },
   {
     icon: Microchip,
@@ -79,7 +85,8 @@ const services = [
       'Identificación permanente',
       'Registro oficial',
       'Procedimiento seguro'
-    ]
+    ],
+    href: '/servicios/implantacion-microchip'
   },
   {
     icon: Cross,
@@ -90,7 +97,8 @@ const services = [
       'Criterio profesional',
       'Acompañamiento',
       'Respeto y dignidad'
-    ]
+    ],
+    href: '/servicios/eutanasia'
   }
 ]
 ---
@@ -122,6 +130,7 @@ const services = [
               title={service.title}
               cont={service.description}
               feature={service.features}
+              href={service.href}
             />
           </article>
         ))
