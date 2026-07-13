@@ -5,7 +5,7 @@ import Footeer from '../../components/landig/Footer.astro'
 
 const pageTitle = 'Servicios Veterinarios a Domicilio | Dra. Fernanda Sasso'
 const pageDescription =
-  'Conoce todos nuestros servicios veterinarios a domicilio en Rancagua, Machalí y Olivar. Consultas, vacunación, urgencias y más.'
+  'Conoce todos nuestros servicios veterinarios a domicilio en Rancagua, Machalí y Olivar. Consultas, vacunación, toma de muestras y más.'
 const pageUrl = 'https://www.drasassovet.cl/servicios'
 
 const services = [
@@ -24,10 +24,10 @@ const services = [
     price: '$18.000 - $35.000'
   },
   {
-    title: 'Atención de Urgencias',
+    title: 'Toma de Muestras',
     description:
-      'Manejo inicial de emergencias a domicilio y coordinación de traslados si es necesario.',
-    href: '/servicios/atencion-urgencias',
+      'Toma de exámenes sanguíneos y dermatológicos, interpretación de exámenes y diagnóstico de tratamientos respectivos.',
+    href: '/servicios/toma-de-muestras',
     price: 'Consultar'
   },
   {
@@ -84,7 +84,7 @@ const services = [
               <p class="text-gray-600 mb-4">{service.description}</p>
               <div class="flex items-center justify-between">
                 <span class="text-sm font-medium text-secondary">
-                  Precio: {service.price}
+                  {/* Precio: {service.price} */}
                 </span>
                 <span class="text-sm text-blue-600 font-semibold">
                   Ver detalle →
