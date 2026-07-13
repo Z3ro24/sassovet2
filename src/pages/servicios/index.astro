@@ -8,6 +8,25 @@ const pageDescription =
   'Conoce todos nuestros servicios veterinarios a domicilio en Rancagua, Machalí y Olivar. Consultas, vacunación, toma de muestras y más.'
 const pageUrl = 'https://www.drasassovet.cl/servicios'
 
+const serviciosFaq = [
+  {
+    "@type": "Question",
+    "name": "¿Cuánto cuesta una consulta veterinaria a domicilio?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "La consulta general a domicilio tiene un costo orientativo de $25.000. Consulta por WhatsApp para confirmar disponibilidad y precio final."
+    }
+  },
+  {
+    "@type": "Question",
+    "name": "¿A qué zonas llegan?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Atendemos en Rancagua, Machalí y Olivar. El domicilio a Machalí tiene un costo fijo de $17.000."
+    }
+  }
+]
+
 const services = [
   {
     title: 'Consulta General a Domicilio',
@@ -54,7 +73,7 @@ const services = [
 ]
 ---
 
-<Layout title={pageTitle} description={pageDescription} url={pageUrl}>
+<Layout title={pageTitle} description={pageDescription} url={pageUrl} faq={serviciosFaq}>
   <Header />
 
   <section class="py-16 bg-white">

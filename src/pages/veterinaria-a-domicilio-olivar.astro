@@ -11,6 +11,25 @@ const pageDescription =
   'Servicio veterinario a domicilio en la comuna de Olivar. Atención profesional para perros y gatos en Olivar Alto, Olivar Bajo y Gultro.'
 const pageUrl = 'https://www.drasassovet.cl/veterinaria-a-domicilio-olivar'
 const pageImage = 'https://drasassovet.cl/_astro/foto2.DQJT7_xQ_2uj8Ns.webp'
+
+const pageFaq = [
+  {
+    "@type": "Question",
+    "name": "¿Cubren toda la comuna de Olivar?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Sí, cubrimos Olivar Alto, Olivar Bajo y Gultro."
+    }
+  },
+  {
+    "@type": "Question",
+    "name": "¿Realizan toma de muestras en Olivar?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Sí, realizamos toma de exámenes sanguíneos y dermatológicos en domicilio en Olivar, con interpretación y diagnóstico profesional."
+    }
+  }
+]
 ---
 
 <Layout
@@ -18,6 +37,7 @@ const pageImage = 'https://drasassovet.cl/_astro/foto2.DQJT7_xQ_2uj8Ns.webp'
   description={pageDescription}
   url={pageUrl}
   image={pageImage}
+  faq={pageFaq}
 >
   <Header />
 
