@@ -5,74 +5,81 @@ const {
   url = 'https://www.drasassovet.cl',
   image = 'https://drasassovet.cl/_astro/foto2.DQJT7_xQ_2uj8Ns.webp',
   type = 'website',
-  locale = 'es_CL'
+  locale = 'es_CL',
+  faq = null
 } = Astro.props
+
+const siteName = 'Dra. Fernanda Sasso - Veterinaria a Domicilio'
 ---
 
-<head>
-  <!-- 🔑 SEO BÁSICO -->
+  <!-- SEO básico -->
   <title>{title}</title>
   <meta name="description" content={description} />
   <link rel="canonical" href={url} />
+  <meta name="robots" content="index, follow" />
+  <meta name="robots" content="max-snippet:160, max-image-preview:large" />
 
-  <!-- 🌍 Open Graph / Facebook -->
+  <!-- Open Graph / Facebook -->
   <meta property="og:type" content={type} />
   <meta property="og:title" content={title} />
   <meta property="og:description" content={description} />
   <meta property="og:url" content={url} />
   <meta property="og:image" content={image} />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
   <meta property="og:locale" content={locale} />
+  <meta property="og:site_name" content={siteName} />
 
-  <!-- 🐦 Twitter -->
+  <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content={title} />
   <meta name="twitter:description" content={description} />
   <meta name="twitter:image" content={image} />
 
-  <!-- 📱 Responsive -->
-  <!-- viewport moved to layout to avoid duplicate -->
-
-  <!-- 📌 Idioma -->
+  <!-- Idioma -->
   <meta name="language" content="Spanish" />
 
-  <!-- 📊 JSON-LD: Veterinaria Local -->
-  <!-- 📊 JSON-LD: Veterinaria Local -->
-  <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "VeterinaryCare",
-      "name": "Veterinaria Fernanda Sasso",
-      "image": "https://drasassovet.cl/_astro/foto2.DQJT7_xQ_2uj8Ns.webp",
-      "url": "https://drasassovet.cl/",
-      "telephone": "+56954047440",
-      "email": "f.sassovet@hotmail.com",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Rancagua",
-        "addressRegion": "O'Higgins",
-        "addressCountry": "Chile"
-      },
-      "areaServed": ["Rancagua", "Machalí", "Olivar"],
-      "description": "Veterinaria a Domicilio en Rancagua: consultas, vacunación, emergencias y atención profesional en tu hogar.",
-      "priceRange": "$",
-      "paymentAccepted": "Cash, Transfer",
-      "openingHours": ["Mo-Fr 09:00-19:00", "Sa 09:00-14:00"],
-      "sameAs": ["https://www.instagram.com/dra.sassovet/"]
-    }
-  </script>
+  <!-- JSON-LD: Veterinaria Local -->
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "VeterinaryCare",
+    "name": "Veterinaria Fernanda Sasso",
+    "image": "https://drasassovet.cl/_astro/foto2.DQJT7_xQ_2uj8Ns.webp",
+    "url": "https://www.drasassovet.cl/",
+    "telephone": "+56954047440",
+    "email": "f.sassovet@hotmail.com",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Rancagua",
+      "addressRegion": "O'Higgins",
+      "addressCountry": "Chile"
+    },
+    "areaServed": ["Rancagua", "Machalí", "Olivar"],
+    "description": "Servicio veterinario profesional a domicilio en Rancagua, Machalí y Olivar. Consultas, vacunación, toma de muestras y cuidados para tus mascotas.",
+    "priceRange": "$",
+    "paymentAccepted": "Cash, Transfer",
+    "openingHours": ["Mo-Fr 09:00-19:00", "Sa 09:00-14:00"],
+    "sameAs": ["https://www.instagram.com/dra.sassovet/"]
+  })} />
 
-  <!-- FAQ structured data (improves SERP snippets for common questions) -->
-  <script type="application/ld+json">
-    {
+  <!-- FAQ structured data (page-specific or fallback generic) -->
+  {faq ? (
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": faq
+    })} />
+  ) : (
+    <script type="application/ld+json" set:html={JSON.stringify({
       "@context": "https://schema.org",
       "@type": "FAQPage",
       "mainEntity": [
         {
           "@type": "Question",
-          "name": "¿Ofrecen atención a domicilio en Rancagua?",
+          "name": "¿Ofrecen atención a domicilio en Rancagua y Machalí?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Sí, ofrecemos atención veterinaria a domicilio en Rancagua y Machalí para consultas, vacunación y emergencias."
+            "text": "Sí, ofrecemos atención veterinaria a domicilio en Rancagua, Machalí y Olivar para consultas, vacunación y cuidados preventivos."
           }
         },
         {
@@ -84,6 +91,5 @@ const {
           }
         }
       ]
-    }
-  </script>
-</head>
+    })} />
+  )}

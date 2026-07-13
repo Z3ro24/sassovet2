@@ -2,18 +2,23 @@
 import Layout from '../../layouts/Layout.astro'
 import Header from '../../components/landig/Header.astro'
 import Footeer from '../../components/landig/Footer.astro'
-const title = 'Toma de muestras'
-const description =
-  'Toma de exámenes sanguíneos y dermatológicos, interpretación de exámenes y diagnóstico de tratamientos respectivos.'
-const price = 'Consultar'
+
+const pageTitle = 'Toma de Muestras a Domicilio en Rancagua y Machalí | Dra. Fernanda Sasso'
+const pageDescription =
+  'Toma de muestras sanguíneas y dermatológicas a domicilio en Rancagua, Machalí y Olivar. Interpretación profesional y diagnóstico preciso.'
+const pageUrl = 'https://www.drasassovet.cl/servicios/toma-de-muestras'
+const pageImage = 'https://drasassovet.cl/_astro/foto2.DQJT7_xQ_2uj8Ns.webp'
 ---
 
-<Layout title={title} description={description}>
+<Layout title={pageTitle} description={pageDescription} url={pageUrl} image={pageImage}>
   <Header />
   <section class="container mx-auto px-4 py-12 max-w-3xl">
-    <h1 class="text-3xl font-bold mb-2">{title}</h1>
-    <h2 class="text-xl text-gray-500 mb-6">Servicio veterinario a domicilio</h2>
-    <p class="text-gray-700 mb-6">{description}</p>
+    <h1 class="text-3xl font-bold mb-2">Toma de Muestras a Domicilio</h1>
+    <h2 class="text-xl text-gray-500 mb-6">Servicio veterinario a domicilio en Rancagua, Machalí y Olivar</h2>
+    <p class="text-gray-700 mb-6">
+      Nuestro servicio de <strong>toma de muestras a domicilio</strong> permite realizar exámenes de laboratorio sin necesidad de traslado.
+      Tomamos muestras sanguíneas y dermatológicas directamente en tu hogar, con <strong>interpretación profesional</strong> y diagnóstico preciso.
+    </p>
 
     <h2 class="text-xl font-semibold mb-2">Qué incluye</h2>
     <ul class="list-disc list-inside mb-6 text-gray-700">
@@ -23,7 +28,10 @@ const price = 'Consultar'
       <li>Diagnóstico preciso y plan de tratamiento personalizado</li>
     </ul>
 
-    <p class="text-lg font-semibold mb-6">Precio orientativo: {price}</p>
+    <p class="text-gray-700 mb-6">
+      Disponible en <strong>Rancagua</strong>, <strong>Machalí</strong> y <strong>Olivar</strong>. Consulta el precio según el tipo de
+      examen necesario.
+    </p>
 
     <a
       href="https://wa.me/56954047440?text=Hola,%20quiero%20una%20toma%20de%20muestras%20para%20mi%20mascota"

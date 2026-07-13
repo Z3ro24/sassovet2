@@ -11,6 +11,33 @@ const pageDescription =
   'Atención veterinaria a domicilio en Machalí: consultas, vacunación, emergencias y cuidado integral en tu hogar. Agenda por WhatsApp.'
 const pageUrl = 'https://www.drasassovet.cl/veterinaria-a-domicilio-machali'
 const pageImage = 'https://drasassovet.cl/_astro/foto2.DQJT7_xQ_2uj8Ns.webp'
+
+const pageFaq = [
+  {
+    '@type': 'Question',
+    name: '¿Realizan toma de muestras a domicilio en Machalí?',
+    acceptedAnswer: {
+      '@type': 'Answer',
+      text: 'Sí, realizamos toma de exámenes sanguíneos y dermatológicos en domicilio en Machalí, con interpretación y diagnóstico profesional.'
+    }
+  },
+  {
+    '@type': 'Question',
+    name: '¿Cuál es el costo de la visita a domicilio en Machalí?',
+    acceptedAnswer: {
+      '@type': 'Answer',
+      text: 'El domicilio a Machalí tiene un costo fijo de $17.000.'
+    }
+  },
+  {
+    '@type': 'Question',
+    name: '¿A cuántas zonas de Machalí llegan?',
+    acceptedAnswer: {
+      '@type': 'Answer',
+      text: 'Cubrimos la mayoría de sectores de Machalí, incluyendo Avenida San Juan, Escrivá de Balaguer, El Polo, Nogales y Machalí Centro.'
+    }
+  }
+]
 ---
 
 <Layout
@@ -18,6 +45,7 @@ const pageImage = 'https://drasassovet.cl/_astro/foto2.DQJT7_xQ_2uj8Ns.webp'
   description={pageDescription}
   url={pageUrl}
   image={pageImage}
+  faq={pageFaq}
 >
   <Header />
 
@@ -47,7 +75,8 @@ const pageImage = 'https://drasassovet.cl/_astro/foto2.DQJT7_xQ_2uj8Ns.webp'
               >, ideal para quienes buscan un <strong
                 >servicio veterinario profesional y personalizado</strong
               >
-              sin mover a su mascota. Evita el estrés del traslado y recibe una
+              sin mover a su mascota. Evita el estrés del traslado y el tránsito
+              por la <strong>Carretera del Cobre</strong>, y recibe una
               <strong>consulta veterinaria</strong> completa en la comodidad de tu
               hogar.
               <br />
@@ -66,7 +95,9 @@ const pageImage = 'https://drasassovet.cl/_astro/foto2.DQJT7_xQ_2uj8Ns.webp'
           >
             <div class="flex items-center space-x-2 text-vet-gray">
               <MapPin class="w-5 h-5 text-secondary" />
-              <span class="text-gray-400">Cobertura en Machalí</span>
+              <span class="text-gray-400"
+                >Machalí Centro, San Juan, El Polo y más</span
+              >
             </div>
             <div class="flex items-center space-x-2 text-vet-gray">
               <Clock class="w-5 h-5 text-secondary" />
@@ -240,8 +271,11 @@ const pageImage = 'https://drasassovet.cl/_astro/foto2.DQJT7_xQ_2uj8Ns.webp'
             Servicio local
           </h3>
           <p class="text-gray-600">
-            Atención rápida y eficiente adaptada a las necesidades específicas
-            de Machalí
+            Atención rápida y eficiente en sectores como <strong
+              >Avenida San Juan</strong
+            >,
+            <strong>Escrivá de Balaguer</strong>, <strong>El Polo</strong>,
+            <strong>Nogales</strong> y <strong>Machalí Centro</strong>.
           </p>
         </div>
       </div>
@@ -548,16 +582,12 @@ const pageImage = 'https://drasassovet.cl/_astro/foto2.DQJT7_xQ_2uj8Ns.webp'
       </h2>
       <div class="space-y-3 text-gray-700">
         <details class="bg-gray-50 p-4 rounded">
-          <summary class="font-medium">¿Realizan toma de muestras a domicilio?</summary>
+          <summary class="font-medium"
+            >¿Realizan toma de muestras a domicilio?</summary
+          >
           <div class="mt-2 text-sm">
-            Sí, realizamos toma de exámenes sanguíneos y dermatológicos en domicilio, con interpretación y diagnóstico profesional.
-          </div>
-        </details>
-
-        <details class="bg-gray-50 p-4 rounded">
-          <summary class="font-medium">¿Cuál es el costo de la visita?</summary>
-          <div class="mt-2 text-sm">
-            El domicilio a Machalí tiene un costo fijo de $17.000 .
+            Sí, realizamos toma de exámenes sanguíneos y dermatológicos en
+            domicilio, con interpretación y diagnóstico profesional.
           </div>
         </details>
 
@@ -566,7 +596,8 @@ const pageImage = 'https://drasassovet.cl/_astro/foto2.DQJT7_xQ_2uj8Ns.webp'
             >¿A cuántas zonas de Machalí llegan?</summary
           >
           <div class="mt-2 text-sm">
-            Cubrimos la mayoría de sectores de Machalí.
+            Cubrimos la mayoría de sectores de Machalí, incluyendo Avenida San
+            Juan, Escrivá de Balaguer, El Polo, Nogales y Machalí Centro.
           </div>
         </details>
       </div>
@@ -601,10 +632,7 @@ const pageImage = 'https://drasassovet.cl/_astro/foto2.DQJT7_xQ_2uj8Ns.webp'
   </script>
 
   <!-- CONTACTO RÁPIDO -->
-  <section
-    class="py-8 sm:py-16 bg-gradient-to-br from-blue-600 to-blue-800"
-    id="contacto"
-  >
+  <section class="py-8 sm:py-16 bg-gray-50" id="contacto">
     <div class="container mx-auto px-4">
       <div class="max-w-4xl mx-auto text-center">
         <div

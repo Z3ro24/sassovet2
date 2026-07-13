@@ -2,27 +2,37 @@
 import Layout from '../../layouts/Layout.astro'
 import Header from '../../components/landig/Header.astro'
 import Footeer from '../../components/landig/Footer.astro'
-const title = 'Consulta general a domicilio'
-const description =
-  'Evaluación completa de salud, diagnóstico y recomendaciones personalizadas para tu mascota en la comodidad de tu hogar.'
-const price = '$25.000 (orientativo)'
+
+const pageTitle = 'Consulta General a Domicilio en Rancagua y Machalí | Dra. Fernanda Sasso'
+const pageDescription =
+  'Consulta veterinaria general a domicilio en Rancagua, Machalí y Olivar. Examen físico completo, diagnóstico y plan de tratamiento personalizado. Agenda por WhatsApp.'
+const pageUrl = 'https://www.drasassovet.cl/servicios/consulta-general'
+const pageImage = 'https://drasassovet.cl/_astro/foto2.DQJT7_xQ_2uj8Ns.webp'
 ---
 
-<Layout title={title} description={description}>
+<Layout title={pageTitle} description={pageDescription} url={pageUrl} image={pageImage}>
   <Header />
   <section class="container mx-auto px-4 py-12 max-w-3xl">
-    <h1 class="text-3xl font-bold mb-2">{title}</h1>
-    <h2 class="text-xl text-gray-500 mb-6">Servicio veterinario a domicilio</h2>
-    <p class="text-gray-700 mb-6">{description}</p>
+    <h1 class="text-3xl font-bold mb-2">Consulta General a Domicilio</h1>
+    <h2 class="text-xl text-gray-500 mb-6">Servicio veterinario a domicilio en Rancagua, Machalí y Olivar</h2>
+    <p class="text-gray-700 mb-6">
+      Nuestra <strong>consulta veterinaria general a domicilio</strong> incluye una evaluación completa de salud para tu mascota,
+      directamente en la comodidad de tu hogar. Evita el estrés del traslado y recibe un <strong>diagnóstico profesional</strong> con
+      recomendaciones personalizadas de cuidado y prevención.
+    </p>
 
     <h2 class="text-xl font-semibold mb-2">Qué incluye</h2>
     <ul class="list-disc list-inside mb-6 text-gray-700">
       <li>Examen físico completo</li>
       <li>Diagnóstico básico y plan de tratamiento</li>
       <li>Consejos de cuidado y prevención</li>
+      <li>Seguimiento y control post-consulta</li>
     </ul>
 
-    <!-- <p class="text-lg font-semibold mb-6">Precio orientativo: {price}</p> -->
+    <p class="text-gray-700 mb-6">
+      Atendemos en <strong>Rancagua</strong>, <strong>Machalí</strong> y <strong>Olivar</strong>. Nuestra veterinaria a domicilio
+      está diseñada para que tu mascota reciba la mejor atención sin salir de casa.
+    </p>
 
     <a
       href="https://wa.me/56954047440?text=Hola,%20quiero%20agendar%20una%20consulta%20general"

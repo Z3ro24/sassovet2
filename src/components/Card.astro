@@ -2,19 +2,27 @@
 // 1. Definición de la interfaz de Props para TypeScript
 interface Props {
   title?: string
-  cont?: string // Usaremos 'cont' para la descripción
-  feature?: string[] // Array de strings (características)
+  cont?: string
+  feature?: string[]
   Icon: any
+  href?: string
 }
 
-const { title, cont, feature, Icon } = Astro.props
+const { title, cont, feature, Icon, href } = Astro.props
+
+const Wrapper = href ? 'a' : 'div'
+const wrapperProps = href ? { href, class: 'block' } : {}
 ---
 
-<div
-  class="wrapper text-center w-full sm:max-w-sm md:max-w-md
-         rounded-xl overflow-hidden shadow-lg p-6 sm:p-8 bg-white
-         transition-transform duration-300 ease-in-out
-         hover:scale-105 flex flex-col items-center"
+<Wrapper
+  {...wrapperProps}
+  class:list={[
+    'wrapper text-center w-full sm:max-w-sm md:max-w-md',
+    'rounded-xl overflow-hidden shadow-lg p-6 sm:p-8 bg-white',
+    'transition-transform duration-300 ease-in-out',
+    'hover:scale-105 flex flex-col items-center',
+    href && 'cursor-pointer hover:shadow-xl'
+  ]}
 >
   <!-- 💥 1. CÍRCULO CON ICONO 💥 -->
   <div
@@ -61,4 +69,4 @@ const { title, cont, feature, Icon } = Astro.props
       </ul>
     )
   }
-</div>
+</Wrapper>
