@@ -1,0 +1,42 @@
+/* Import Swiper styles */
+@import 'swiper/css';
+@import 'swiper/css/navigation';
+@import 'swiper/css/pagination';
+
+/* Swiper container styles */
+.servicios-swiper {
+  margin-bottom: 2rem;
+  padding: 0 40px;
+}
+
+/* Wrapper styles to ensure proper spacing */
+.swiper-wrapper {
+  padding-bottom: 1rem;
+  align-items: stretch;
+}
+
+/* Individual slide styles */
+.swiper-slide {
+  height: auto !important;
+  display: flex;
+  opacity: 0.4;
+  transition: all 0.3s ease;
+  width: calc(33.333% - 20px) !important;
+  max-width: 400px;
+  min-width: 280px;
+}
+
+/* Active slides in desktop view */
+.swiper-slide-active,
+.swiper-slide-next,
+.swiper-slide-next + .swiper-slide,
+.swiper-slide-next + .swiper-slide + .swiper-slide {
+  opacity: 1;
+}
+
+/* Inner card styles */
+.swiper-slide > div {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}

@@ -9,9 +9,11 @@
     "astro": "astro"
   },
   "dependencies": {
+    "@astrojs/sitemap": "^3.7.3",
     "@lucide/astro": "^0.544.0",
     "@tailwindcss/vite": "^4.1.13",
-    "astro": "^5.14.1"
+    "astro": "^5.15.4",
+    "swiper": "^12.0.3"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.21",

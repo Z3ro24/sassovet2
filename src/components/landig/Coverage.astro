@@ -7,13 +7,22 @@ const services = [
     icon: MapPin,
     title: 'Rancagua',
     description: 'Cobertura completa en toda la ciudad',
-    det: 'Tiempo promedio: 20-35 min'
+    det: 'Tiempo promedio: 20-35 min',
+    href: '/veterinaria-a-domicilio-rancagua'
   },
   {
     icon: MapPin,
     title: 'Machalí',
     description: 'Atención en sectores residenciales',
-    det: 'Tiempo promedio: 30-45 min'
+    det: 'Tiempo promedio: 30-45 min',
+    href: '/veterinaria-a-domicilio-machali'
+  },
+  {
+    icon: MapPin,
+    title: 'Olivar',
+    description: 'Cobertura en Olivar Alto, Bajo y Gultro',
+    det: 'Tiempo promedio: 25-40 min',
+    href: '/veterinaria-a-domicilio-olivar'
   }
 ]
 ---
@@ -26,23 +35,24 @@ const services = [
         <h2
           class="text-3xl sm:text-4xl lg:text-5xl font-bold text-primary text-shadow-lg"
         >
-          Zonas de Atención Veterinaria a Domicilio en Rancagua y Machalí
+          Zonas de Atención Veterinaria a Domicilio en Rancagua, Machalí y
+          Olivar
         </h2>
         <p
           class="text-base sm:text-lg lg:text-xl text-gray-400 max-w-2xl mx-auto"
         >
           Brindamos <strong>atención veterinaria a domicilio</strong> en <strong
             >Rancagua</strong
-          > y
-          <strong>Machalí</strong>, con un servicio profesional, puntual y sin
-          estrés para tus mascotas. Llegamos directamente a tu hogar con todos
-          los implementos necesarios para su cuidado.
+          >, <strong>Machalí</strong> y <strong>Olivar</strong>, con un servicio
+          profesional, puntual y sin estrés para tus mascotas. Llegamos
+          directamente a tu hogar con todos los implementos necesarios para su
+          cuidado.
         </p>
       </div>
 
       <!-- Cards responsivas -->
       <div
-        class="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-8 lg:gap-10 max-w-4xl mx-auto"
+        class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 lg:gap-10 max-w-5xl mx-auto"
       >
         {
           services.map((service) => (
@@ -51,6 +61,7 @@ const services = [
               title={service.title}
               cont={service.description}
               det={service.det}
+              href={service.href}
             />
           ))
         }

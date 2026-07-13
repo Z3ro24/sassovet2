@@ -1,0 +1,131 @@
+---
+import Layout from '../../layouts/Layout.astro'
+import Header from '../../components/landig/Header.astro'
+import Footeer from '../../components/landig/Footer.astro'
+
+const pageTitle = 'Servicios Veterinarios a Domicilio | Dra. Fernanda Sasso'
+const pageDescription =
+  'Conoce todos nuestros servicios veterinarios a domicilio en Rancagua, Machalí y Olivar. Consultas, vacunación, toma de muestras y más.'
+const pageUrl = 'https://www.drasassovet.cl/servicios'
+
+const serviciosFaq = [
+  {
+    "@type": "Question",
+    "name": "¿Cuánto cuesta una consulta veterinaria a domicilio?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "La consulta general a domicilio tiene un costo orientativo de $25.000. Consulta por WhatsApp para confirmar disponibilidad y precio final."
+    }
+  },
+  {
+    "@type": "Question",
+    "name": "¿A qué zonas llegan?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Atendemos en Rancagua, Machalí y Olivar. El domicilio a Machalí tiene un costo fijo de $17.000."
+    }
+  }
+]
+
+const services = [
+  {
+    title: 'Consulta General a Domicilio',
+    description:
+      'Evaluación completa de salud, diagnóstico y recomendaciones personalizadas para tu mascota en la comodidad de tu hogar.',
+    href: '/servicios/consulta-general',
+    price: '$25.000'
+  },
+  {
+    title: 'Vacunación y Prevención',
+    description:
+      'Programas de vacunación y desparasitación adaptados a la edad y estilo de vida de tu mascota.',
+    href: '/servicios/vacunacion',
+    price: '$18.000 - $35.000'
+  },
+  {
+    title: 'Toma de Muestras',
+    description:
+      'Toma de exámenes sanguíneos y dermatológicos, interpretación de exámenes y diagnóstico de tratamientos respectivos.',
+    href: '/servicios/toma-de-muestras',
+    price: 'Consultar'
+  },
+  {
+    title: 'Cuidados Preventivos',
+    description:
+      'Higiene, curaciones y toma de muestras en domicilio para mantener a tu mascota sana.',
+    href: '/servicios/cuidados-preventivos',
+    price: '$15.000 - $25.000'
+  },
+  {
+    title: 'Implantación de Microchip',
+    description:
+      'Implantación y registro de microchip para la identificación permanente de tu mascota.',
+    href: '/servicios/implantacion-microchip',
+    price: '$20.000'
+  },
+  {
+    title: 'Eutanasia a Domicilio',
+    description:
+      'Servicio de eutanasia humanitaria y acompañamiento, con criterio profesional y respeto por el bienestar animal.',
+    href: '/servicios/eutanasia',
+    price: 'Consultar'
+  }
+]
+---
+
+<Layout title={pageTitle} description={pageDescription} url={pageUrl} faq={serviciosFaq}>
+  <Header />
+
+  <section class="py-16 bg-white">
+    <div class="container mx-auto px-4 max-w-5xl">
+      <div class="text-center mb-12">
+        <h1
+          class="text-3xl sm:text-4xl lg:text-5xl font-bold text-primary mb-4"
+        >
+          Servicios Veterinarios a Domicilio
+        </h1>
+        <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+          Todos nuestros servicios se realizan directamente en tu hogar en
+          Rancagua, Machalí y Olivar. Sin traslados, sin estrés.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-6">
+        {
+          services.map((service) => (
+            <a
+              href={service.href}
+              class="block bg-gray-50 rounded-2xl p-6 hover:shadow-lg transition-shadow border border-gray-100"
+            >
+              <h2 class="text-xl font-semibold text-primary mb-2">
+                {service.title}
+              </h2>
+              <p class="text-gray-600 mb-4">{service.description}</p>
+              <div class="flex items-center justify-between">
+                <span class="text-sm font-medium text-secondary">
+                  {/* Precio: {service.price} */}
+                </span>
+                <span class="text-sm text-blue-600 font-semibold">
+                  Ver detalle →
+                </span>
+              </div>
+            </a>
+          ))
+        }
+      </div>
+
+      <div class="text-center mt-12">
+        <a
+          href="https://wa.me/56954047440"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex items-center justify-center bg-blue-600 text-white px-8 py-3 rounded-full text-lg font-semibold shadow-lg hover:bg-blue-700 transition"
+        >
+          Consultar disponibilidad
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <Footeer />
+</Layout>

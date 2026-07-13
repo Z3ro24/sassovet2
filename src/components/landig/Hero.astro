@@ -5,7 +5,6 @@ import heroImage from '../../assets/foto2.webp'
 ---
 
 <script>
-  // Encuentra todos los botones con la clase `wsp` en la página.
   const buttons = document.querySelectorAll('button.wsp')
   buttons.forEach((button) => {
     button.addEventListener('click', () => {
@@ -25,9 +24,9 @@ import heroImage from '../../assets/foto2.webp'
           <h1
             class="text-shadow-lg text-3xl sm:text-4xl lg:text-6xl font-bold text-primary leading-tight"
           >
-            Veterinaria a domicilio en Rancagua | Machalí
+            Servicio Veterinario a Domicilio para tus Mascotas
             <span class="block text-secondary text-shadow-lg">
-              Cuidado profesional para tus mascotas en casa
+              Cuidado profesional en Rancagua, Machalí y Olivar
             </span>
           </h1>
 
@@ -35,7 +34,7 @@ import heroImage from '../../assets/foto2.webp'
             class="text-base sm:text-lg lg:text-xl text-gray-400 leading-relaxed max-w-lg"
           >
             Ofrecemos <strong
-              >atención veterinaria a domicilio en Rancagua y Machalí</strong
+              >atención veterinaria a domicilio en Rancagua, Machalí y Olivar</strong
             >, ideal para quienes buscan un <strong
               >servicio veterinario profesional y personalizado</strong
             > sin mover a su mascota. Evita el estrés del traslado y recibe una <strong
@@ -55,7 +54,7 @@ import heroImage from '../../assets/foto2.webp'
         <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 text-sm sm:text-base">
           <div class="flex items-center space-x-2 text-vet-gray">
             <MapPin class="w-5 h-5 text-secondary" />
-            <span class="text-gray-400">Rancagua y Machalí</span>
+            <span class="text-gray-400">Rancagua, Machalí y Olivar</span>
           </div>
           <div class="flex items-center space-x-2 text-vet-gray">
             <Clock class="w-5 h-5 text-secondary" />
@@ -69,18 +68,17 @@ import heroImage from '../../assets/foto2.webp'
 
         <!-- Botones: CTA a landings por localidad -->
         <div class="flex flex-col sm:flex-row gap-4 mt-4">
-          <a
-            href="/rancagua"
-            class="w-full sm:w-auto flex items-center justify-center bg-blue-600 text-white px-6 py-3 rounded-full text-lg font-semibold shadow-lg hover:bg-blue-700"
+          <button
+            class="wsp w-full sm:w-auto flex items-center justify-center bg-blue-500 text-white px-6 py-3 rounded-full text-lg font-semibold shadow-lg hover:bg-blue-600"
           >
-            Ver servicio en Rancagua
-          </a>
-
+            <Phone class="w-5 h-5 mr-2" />
+            Agendar Consulta
+          </button>
           <a
-            href="/machali"
-            class="w-full sm:w-auto flex items-center justify-center border-2 border-blue-600 text-blue-600 px-6 py-3 rounded-full text-lg font-semibold hover:bg-blue-600 hover:text-white transition"
+            href="#servicios"
+            class="w-full sm:w-auto flex items-center justify-center border-2 border-blue-500 text-blue-500 px-6 py-3 rounded-full text-lg font-semibold hover:bg-blue-500 hover:text-white transition"
           >
-            Ver servicio en Machalí
+            Ver Servicios
           </a>
         </div>
       </div>
@@ -90,7 +88,7 @@ import heroImage from '../../assets/foto2.webp'
         <div class="relative rounded-2xl overflow-hidden shadow-hero">
           <Image
             src={heroImage}
-            alt="Veterinaria a domicilio en Rancagua y Machalí - Dra. Sasso Vet"
+            alt="Veterinaria a domicilio en Rancagua, Machalí y Olivar - Dra. Sasso Vet"
             class="w-full h-[300px] sm:h-[450px] lg:h-[550px] object-cover object-[50%_40%]"
             width={600}
             height={800}

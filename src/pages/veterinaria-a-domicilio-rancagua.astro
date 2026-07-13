@@ -5,12 +5,39 @@ import Footeer from '../components/landig/Footer.astro'
 import { Phone, Clock, MapPin } from '@lucide/astro'
 import { Image } from 'astro:assets'
 import heroImage from '../assets/foto2.webp'
-
+import '../styles/swiper.css'
 const pageTitle = 'Veterinaria a domicilio en Rancagua | Dra. Fernanda Sasso'
 const pageDescription =
   'Atención veterinaria a domicilio en Rancagua: consultas, vacunación, emergencias y cuidado integral en tu hogar. Agenda por WhatsApp.'
-const pageUrl = 'https://www.drasassovet.cl/rancagua'
+const pageUrl = 'https://www.drasassovet.cl/veterinaria-a-domicilio-rancagua'
 const pageImage = 'https://drasassovet.cl/_astro/foto2.DQJT7_xQ_2uj8Ns.webp'
+
+const pageFaq = [
+  {
+    '@type': 'Question',
+    name: '¿Realizan toma de muestras a domicilio en Rancagua?',
+    acceptedAnswer: {
+      '@type': 'Answer',
+      text: 'Sí, realizamos toma de exámenes sanguíneos y dermatológicos en domicilio en Rancagua, con interpretación y diagnóstico.'
+    }
+  },
+  {
+    '@type': 'Question',
+    name: '¿Cubre toda la comuna de Rancagua?',
+    acceptedAnswer: {
+      '@type': 'Answer',
+      text: 'Sí, cubrimos las principales zonas de Rancagua, incluyendo Rancagua Norte, Sector Sur, Centro, Manzanal y Bosques de San Francisco.'
+    }
+  },
+  {
+    '@type': 'Question',
+    name: '¿Aceptan tarjetas o solo efectivo?',
+    acceptedAnswer: {
+      '@type': 'Answer',
+      text: 'Aceptamos solo efectivo y transferencias bancarias.'
+    }
+  }
+]
 ---
 
 <Layout
@@ -18,6 +45,7 @@ const pageImage = 'https://drasassovet.cl/_astro/foto2.DQJT7_xQ_2uj8Ns.webp'
   description={pageDescription}
   url={pageUrl}
   image={pageImage}
+  faq={pageFaq}
 >
   <Header />
 
@@ -66,7 +94,9 @@ const pageImage = 'https://drasassovet.cl/_astro/foto2.DQJT7_xQ_2uj8Ns.webp'
           >
             <div class="flex items-center space-x-2 text-vet-gray">
               <MapPin class="w-5 h-5 text-secondary" />
-              <span class="text-gray-400">Cobertura en Rancagua</span>
+              <span class="text-gray-400"
+                >Rancagua Norte, Sector Sur, Centro y más</span
+              >
             </div>
             <div class="flex items-center space-x-2 text-vet-gray">
               <Clock class="w-5 h-5 text-secondary" />
@@ -238,8 +268,12 @@ const pageImage = 'https://drasassovet.cl/_astro/foto2.DQJT7_xQ_2uj8Ns.webp'
             Cobertura local
           </h3>
           <p class="text-gray-600">
-            Servicio optimizado para Rancagua, con tiempos de respuesta rápidos
-            y conocimiento del área
+            Servicio optimizado para <strong>Rancagua Norte</strong>, <strong
+              >Sector Sur</strong
+            >,
+            <strong>Centro</strong>, <strong>Manzanal</strong> y <strong
+              >Bosques de San Francisco</strong
+            >, con tiempos de respuesta rápidos y conocimiento del área.
           </p>
         </div>
       </div>
@@ -264,7 +298,7 @@ const pageImage = 'https://drasassovet.cl/_astro/foto2.DQJT7_xQ_2uj8Ns.webp'
       >
         <!-- Consultas -->
         <div
-          class="bg-white rounded-xl sm:rounded-2xl p-4 sm:p-6 shadow-lg hover:shadow-xl transition-shadow"
+          class="bg-white rounded-xl sm:rounded-2xl p-4 sm:p-6 shadow-lg hover:shadow-xl transition-shadow flex flex-col h-full"
         >
           <div
             class="h-12 w-12 sm:h-14 sm:w-14 bg-blue-100 rounded-xl flex items-center justify-center mb-3 sm:mb-4"
@@ -291,11 +325,19 @@ const pageImage = 'https://drasassovet.cl/_astro/foto2.DQJT7_xQ_2uj8Ns.webp'
             Evaluación completa de salud con examen físico, diagnóstico y plan
             personalizado
           </p>
+          <div class="mt-auto">
+            <a
+              href="/servicios/consulta-general"
+              class="inline-flex items-center justify-center bg-blue-600 text-white px-4 py-2 rounded-full text-sm font-semibold shadow hover:bg-blue-700 transition"
+            >
+              Ver detalle
+            </a>
+          </div>
         </div>
 
         <!-- Vacunación -->
         <div
-          class="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-shadow"
+          class="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-shadow flex flex-col h-full"
         >
           <div
             class="h-14 w-14 bg-green-100 rounded-xl flex items-center justify-center mb-4"
@@ -321,11 +363,19 @@ const pageImage = 'https://drasassovet.cl/_astro/foto2.DQJT7_xQ_2uj8Ns.webp'
           <p class="text-gray-600">
             Programas personalizados de vacunación y planes de desparasitación
           </p>
+          <div class="mt-auto">
+            <a
+              href="/servicios/vacunacion"
+              class="inline-flex items-center justify-center bg-blue-600 text-white px-4 py-2 rounded-full text-sm font-semibold shadow hover:bg-blue-700 transition"
+            >
+              Ver detalle
+            </a>
+          </div>
         </div>
 
-        <!-- Urgencias -->
+        <!-- Toma de muestras -->
         <div
-          class="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-shadow"
+          class="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-shadow flex flex-col h-full"
         >
           <div
             class="h-14 w-14 bg-red-100 rounded-xl flex items-center justify-center mb-4"
@@ -341,21 +391,29 @@ const pageImage = 'https://drasassovet.cl/_astro/foto2.DQJT7_xQ_2uj8Ns.webp'
                 stroke-linecap="round"
                 stroke-linejoin="round"
                 stroke-width="2"
-                d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
+              ></path>
             </svg>
           </div>
           <h3 class="text-xl font-semibold text-primary mb-2">
-            Atención de urgencias
+            Toma de muestras
           </h3>
           <p class="text-gray-600">
-            Manejo inicial de emergencias y coordinación de traslados si es
-            necesario
+            Exámenes sanguíneos y dermatológicos, interpretación y diagnóstico
           </p>
+          <div class="mt-auto">
+            <a
+              href="/servicios/toma-de-muestras"
+              class="inline-flex items-center justify-center bg-blue-600 text-white px-4 py-2 rounded-full text-sm font-semibold shadow hover:bg-blue-700 transition"
+            >
+              Ver detalle
+            </a>
+          </div>
         </div>
 
         <!-- Preventivos -->
         <div
-          class="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-shadow"
+          class="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-shadow flex flex-col h-full"
         >
           <div
             class="h-14 w-14 bg-purple-100 rounded-xl flex items-center justify-center mb-4"
@@ -381,6 +439,86 @@ const pageImage = 'https://drasassovet.cl/_astro/foto2.DQJT7_xQ_2uj8Ns.webp'
           <p class="text-gray-600">
             Servicios de higiene, curaciones y toma de muestras en domicilio
           </p>
+          <div class="mt-auto">
+            <a
+              href="/servicios/cuidados-preventivos"
+              class="inline-flex items-center justify-center bg-blue-600 text-white px-4 py-2 rounded-full text-sm font-semibold shadow hover:bg-blue-700 transition"
+            >
+              Ver detalle
+            </a>
+          </div>
+        </div>
+        <!-- Implanatcion de Microchip -->
+        <div
+          class="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-shadow flex flex-col h-full"
+        >
+          <div
+            class="h-14 w-14 bg-purple-100 rounded-xl flex items-center justify-center mb-4"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-8 w-8 text-purple-600"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"
+              ></path>
+            </svg>
+          </div>
+          <h3 class="text-xl font-semibold text-primary mb-2">
+            Implantación de Microchip
+          </h3>
+          <p class="text-gray-600">
+            Servicios de higiene, curaciones y toma de muestras en domicilio
+          </p>
+          <div class="mt-auto">
+            <a
+              href="/servicios/implantacion-microchip"
+              class="inline-flex items-center justify-center bg-blue-600 text-white px-4 py-2 rounded-full text-sm font-semibold shadow hover:bg-blue-700 transition"
+            >
+              Ver detalle
+            </a>
+          </div>
+        </div>
+        <!-- Eutanasia -->
+        <div
+          class="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-shadow flex flex-col h-full"
+        >
+          <div
+            class="h-14 w-14 bg-purple-100 rounded-xl flex items-center justify-center mb-4"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-8 w-8 text-purple-600"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"
+              ></path>
+            </svg>
+          </div>
+          <h3 class="text-xl font-semibold text-primary mb-2">Eutanasia</h3>
+          <p class="text-gray-600">
+            Servicios de higiene, curaciones y toma de muestras en domicilio
+          </p>
+          <div class="mt-auto">
+            <a
+              href="/servicios/eutanasia"
+              class="inline-flex items-center justify-center bg-blue-600 text-white px-4 py-2 rounded-full text-sm font-semibold shadow hover:bg-blue-700 transition"
+            >
+              Ver detalle
+            </a>
+          </div>
         </div>
       </div>
 
@@ -397,7 +535,6 @@ const pageImage = 'https://drasassovet.cl/_astro/foto2.DQJT7_xQ_2uj8Ns.webp'
       </div>
     </div>
   </section>
-
   <!-- PROCESO Y AGENDA -->
   <section class="bg-gray-50 py-12">
     <div class="container mx-auto px-4 max-w-4xl">
@@ -453,10 +590,11 @@ const pageImage = 'https://drasassovet.cl/_astro/foto2.DQJT7_xQ_2uj8Ns.webp'
       <div class="space-y-3 text-gray-700">
         <details class="bg-gray-50 p-4 rounded">
           <summary class="font-medium"
-            >¿Atienden emergencias a domicilio?</summary
+            >¿Realizan toma de muestras a domicilio?</summary
           >
           <div class="mt-2 text-sm">
-            Sí, ofrecemos manejo inicial de urgencias en domicilio.
+            Sí, realizamos toma de exámenes sanguíneos y dermatológicos en
+            domicilio, con interpretación y diagnóstico.
           </div>
         </details>
 
@@ -465,7 +603,8 @@ const pageImage = 'https://drasassovet.cl/_astro/foto2.DQJT7_xQ_2uj8Ns.webp'
             >¿Cubre toda la comuna de Rancagua?</summary
           >
           <div class="mt-2 text-sm">
-            Cubrimos las principales zonas de Rancagua.
+            Cubrimos las principales zonas de Rancagua, incluyendo Rancagua
+            Norte, Sector Sur, Centro, Manzanal y Bosques de San Francisco.
           </div>
         </details>
 
@@ -487,7 +626,7 @@ const pageImage = 'https://drasassovet.cl/_astro/foto2.DQJT7_xQ_2uj8Ns.webp'
       "@context": "https://schema.org",
       "@type": "VeterinaryCare",
       "name": "Veterinaria Fernanda Sasso",
-      "url": "https://www.drasassovet.cl/rancagua",
+      "url": "https://www.drasassovet.cl/veterinaria-a-domicilio-rancagua",
       "service": [
         {
           "@type": "Service",
@@ -501,18 +640,15 @@ const pageImage = 'https://drasassovet.cl/_astro/foto2.DQJT7_xQ_2uj8Ns.webp'
         },
         {
           "@type": "Service",
-          "name": "Atención de urgencias inicial",
-          "description": "Manejo inicial de urgencias en el hogar y coordinación de traslado si es necesario."
+          "name": "Toma de muestras",
+          "description": "Toma de exámenes sanguíneos y dermatológicos, interpretación de exámenes y diagnóstico de tratamientos respectivos."
         }
       ]
     }
   </script>
 
   <!-- CONTACTO RÁPIDO -->
-  <section
-    class="py-8 sm:py-16 bg-gradient-to-br from-blue-600 to-blue-800"
-    id="contacto"
-  >
+  <section class="py-8 sm:py-16 bg-gray-50" id="contacto">
     <div class="container mx-auto px-4">
       <div class="max-w-4xl mx-auto text-center">
         <div
@@ -590,3 +726,39 @@ const pageImage = 'https://drasassovet.cl/_astro/foto2.DQJT7_xQ_2uj8Ns.webp'
 
   <Footeer />
 </Layout>
+<style>
+  .swiper-pagination-bullet {
+    background-color: #00539c;
+  }
+  .swiper-pagination-bullet-active {
+    background-color: #ff5733;
+  }
+</style>
+
+<script>
+  import Swiper from 'swiper'
+  import { Navigation, Pagination, Autoplay } from 'swiper/modules'
+
+  document.addEventListener('DOMContentLoaded', function () {
+    const swiper = new Swiper('.servicios-swiper', {
+      modules: [Navigation, Pagination, Autoplay],
+      slidesPerView: 'auto',
+      spaceBetween: 20,
+      centeredSlides: true,
+      loop: true,
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev'
+      },
+      autoplay: {
+        delay: 3000,
+        disableOnInteraction: false
+      },
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+        type: 'bullets'
+      }
+    })
+  })
+</script>

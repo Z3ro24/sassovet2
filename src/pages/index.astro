@@ -1,21 +1,37 @@
 ---
 import Layout from '../layouts/Layout.astro'
-import Card from '../components/Card.astro'
 import About from '../components/landig/About.astro'
 import Hero from '../components/landig/Hero.astro'
 import Header from '../components/landig/Header.astro'
-import Services from '../components/landig/Services.astro'
 import Footeer from '../components/landig/Footer.astro'
 import Coverage from '../components/landig/Coverage.astro'
 import Contact from '../components/landig/Contact.astro'
 
-// Page-specific SEO overrides (include local keyword)
 const pageTitle =
   'Atención Veterinaria a Domicilio en Rancagua y Machalí | Dra. Fernanda Sasso'
 const pageDescription =
-  'Veterinaria a domicilio en Rancagua y Machalí. Consultas, vacunación, emergencias y atención profesional en tu hogar. Agenda tu consulta hoy.'
+  'Veterinaria a domicilio en Rancagua y Machalí. Consultas, vacunación, toma de muestras y atención profesional en tu hogar. Agenda tu consulta hoy.'
 const pageUrl = 'https://www.drasassovet.cl/'
 const pageImage = 'https://drasassovet.cl/_astro/foto2.DQJT7_xQ_2uj8Ns.webp'
+
+const homeFaq = [
+  {
+    "@type": "Question",
+    "name": "¿Ofrecen atención a domicilio en Rancagua, Machalí y Olivar?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Sí, ofrecemos atención veterinaria a domicilio en Rancagua, Machalí y Olivar para consultas, vacunación y cuidados preventivos."
+    }
+  },
+  {
+    "@type": "Question",
+    "name": "¿Cómo agendo una consulta a domicilio?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Puedes agendar llamando al +56954047440 o enviando un mensaje por WhatsApp al mismo número."
+    }
+  }
+]
 ---
 
 <Layout
@@ -23,10 +39,10 @@ const pageImage = 'https://drasassovet.cl/_astro/foto2.DQJT7_xQ_2uj8Ns.webp'
   description={pageDescription}
   url={pageUrl}
   image={pageImage}
+  faq={homeFaq}
 >
-  <Header />
+  <Header contactHref="#contacto" />
   <Hero />
-  <Services />
   <About />
   <Coverage />
   <Contact />

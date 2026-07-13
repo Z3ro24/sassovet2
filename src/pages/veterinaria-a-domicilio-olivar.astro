@@ -5,12 +5,31 @@ import Footeer from '../components/landig/Footer.astro'
 import { Phone, Clock, MapPin } from '@lucide/astro'
 import { Image } from 'astro:assets'
 import heroImage from '../assets/foto2.webp'
-
-const pageTitle = 'Veterinaria a domicilio en Machalí | Dra. Fernanda Sasso'
+import '../styles/swiper.css'
+const pageTitle = 'Veterinaria a domicilio en Olivar | Dra. Fernanda Sasso'
 const pageDescription =
-  'Atención veterinaria a domicilio en Machalí: consultas, vacunación, emergencias y cuidado integral en tu hogar. Agenda por WhatsApp.'
-const pageUrl = 'https://www.drasassovet.cl/machali'
+  'Servicio veterinario a domicilio en la comuna de Olivar. Atención profesional para perros y gatos en Olivar Alto, Olivar Bajo y Gultro.'
+const pageUrl = 'https://www.drasassovet.cl/veterinaria-a-domicilio-olivar'
 const pageImage = 'https://drasassovet.cl/_astro/foto2.DQJT7_xQ_2uj8Ns.webp'
+
+const pageFaq = [
+  {
+    "@type": "Question",
+    "name": "¿Cubren toda la comuna de Olivar?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Sí, cubrimos Olivar Alto, Olivar Bajo y Gultro."
+    }
+  },
+  {
+    "@type": "Question",
+    "name": "¿Realizan toma de muestras en Olivar?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Sí, realizamos toma de exámenes sanguíneos y dermatológicos en domicilio en Olivar, con interpretación y diagnóstico profesional."
+    }
+  }
+]
 ---
 
 <Layout
@@ -18,6 +37,7 @@ const pageImage = 'https://drasassovet.cl/_astro/foto2.DQJT7_xQ_2uj8Ns.webp'
   description={pageDescription}
   url={pageUrl}
   image={pageImage}
+  faq={pageFaq}
 >
   <Header />
 
@@ -33,23 +53,20 @@ const pageImage = 'https://drasassovet.cl/_astro/foto2.DQJT7_xQ_2uj8Ns.webp'
             <h1
               class="text-shadow-lg text-2xl xs:text-3xl sm:text-4xl lg:text-6xl font-bold text-primary leading-tight"
             >
-              Veterinaria a domicilio en Machalí
-              <!-- <span class="block text-secondary text-shadow-lg">
-                Cuidado profesional para tus mascotas en casa
-              </span> -->
+              Servicio veterinario a domicilio en Olivar
             </h1>
 
             <p
               class="text-base sm:text-lg lg:text-xl text-gray-400 leading-relaxed max-w-lg"
             >
               Ofrecemos <strong
-                >atención veterinaria a domicilio en Machalí</strong
+                >atención veterinaria a domicilio en Olivar</strong
               >, ideal para quienes buscan un <strong
-                >servicio veterinario profesional y personalizado</strong
+                >servicio veterinario profesional y cercano</strong
               >
-              sin mover a su mascota. Evita el estrés del traslado y recibe una
-              <strong>consulta veterinaria</strong> completa en la comodidad de tu
-              hogar.
+              sin perder tiempo en traslados. Evita el viaje hasta la clínica y recibe
+              una <strong>consulta veterinaria</strong> completa en la comodidad
+              de tu hogar.
               <br />
               <a
                 href="#contacto"
@@ -66,7 +83,7 @@ const pageImage = 'https://drasassovet.cl/_astro/foto2.DQJT7_xQ_2uj8Ns.webp'
           >
             <div class="flex items-center space-x-2 text-vet-gray">
               <MapPin class="w-5 h-5 text-secondary" />
-              <span class="text-gray-400">Cobertura en Machalí</span>
+              <span class="text-gray-400">Cobertura en Olivar</span>
             </div>
             <div class="flex items-center space-x-2 text-vet-gray">
               <Clock class="w-5 h-5 text-secondary" />
@@ -103,7 +120,7 @@ const pageImage = 'https://drasassovet.cl/_astro/foto2.DQJT7_xQ_2uj8Ns.webp'
           <div class="relative rounded-2xl overflow-hidden shadow-hero">
             <Image
               src={heroImage}
-              alt="Veterinaria a domicilio en Machalí - Dra. Sasso Vet"
+              alt="Veterinaria a domicilio en Olivar - Dra. Sasso Vet"
               class="w-full h-[300px] sm:h-[450px] lg:h-[550px] object-cover object-[50%_40%]"
               width={600}
               height={800}
@@ -138,11 +155,11 @@ const pageImage = 'https://drasassovet.cl/_astro/foto2.DQJT7_xQ_2uj8Ns.webp'
     <div class="container mx-auto px-4">
       <div class="max-w-4xl mx-auto text-center mb-12">
         <h2 class="text-3xl sm:text-4xl font-bold text-primary mb-4">
-          ¿Por qué elegirnos para atención veterinaria en Machalí?
+          ¿Por qué elegir atención veterinaria a domicilio en Olivar?
         </h2>
         <p class="text-lg text-gray-600">
-          Experiencia y profesionalismo al servicio de tu mascota, directamente
-          en tu hogar
+          En Olivar sabemos que el tiempo es valioso. Por eso llevamos la
+          clínica directamente a tu hogar
         </p>
       </div>
 
@@ -170,11 +187,12 @@ const pageImage = 'https://drasassovet.cl/_astro/foto2.DQJT7_xQ_2uj8Ns.webp'
             </svg>
           </div>
           <h3 class="text-xl font-semibold text-primary mb-3">
-            Comodidad total
+            Sin traslados innecesarios
           </h3>
           <p class="text-gray-600">
-            Atención veterinaria profesional en la tranquilidad de tu hogar, sin
-            necesidad de traslados
+            Olivar tiene caminos rurales y distancias que pueden complicar el
+            traslado. Nosotros llegamos a tu casa para que tu mascota esté
+            tranquila
           </p>
         </div>
 
@@ -201,11 +219,11 @@ const pageImage = 'https://drasassovet.cl/_astro/foto2.DQJT7_xQ_2uj8Ns.webp'
             </svg>
           </div>
           <h3 class="text-xl font-semibold text-primary mb-3">
-            Máxima confianza
+            Atención personalizada
           </h3>
           <p class="text-gray-600">
-            Comunicación clara y seguimiento personalizado para asegurar la
-            recuperación de tu mascota
+            En tu hogar dedicamos todo el tiempo necesario para un diagnóstico
+            completo y explicarte cada detalle del tratamiento
           </p>
         </div>
 
@@ -237,11 +255,11 @@ const pageImage = 'https://drasassovet.cl/_astro/foto2.DQJT7_xQ_2uj8Ns.webp'
             </svg>
           </div>
           <h3 class="text-xl font-semibold text-primary mb-3">
-            Servicio local
+            Servicio local en Olivar
           </h3>
           <p class="text-gray-600">
-            Atención rápida y eficiente adaptada a las necesidades específicas
-            de Machalí
+            Conocemos bien los sectores de Olivar Alto, Olivar Bajo y Gultro.
+            Tiempos de respuesta rápidos y atención cercana
           </p>
         </div>
       </div>
@@ -253,11 +271,11 @@ const pageImage = 'https://drasassovet.cl/_astro/foto2.DQJT7_xQ_2uj8Ns.webp'
     <div class="container mx-auto px-4">
       <div class="max-w-4xl mx-auto text-center mb-12">
         <h2 class="text-3xl sm:text-4xl font-bold text-primary mb-4">
-          Servicios veterinarios a domicilio en Machalí
+          Servicios veterinarios a domicilio en Olivar
         </h2>
         <p class="text-lg text-gray-600">
-          Cuidado profesional y personalizado para tus mascotas, directamente en
-          tu hogar
+          Cuidado profesional y cercano para tus mascotas, directamente en tu
+          hogar en Olivar
         </p>
       </div>
 
@@ -266,7 +284,7 @@ const pageImage = 'https://drasassovet.cl/_astro/foto2.DQJT7_xQ_2uj8Ns.webp'
       >
         <!-- Consultas -->
         <div
-          class="bg-white rounded-xl sm:rounded-2xl p-4 sm:p-6 shadow-lg hover:shadow-xl transition-shadow"
+          class="bg-white rounded-xl sm:rounded-2xl p-4 sm:p-6 shadow-lg hover:shadow-xl transition-shadow flex flex-col h-full"
         >
           <div
             class="h-12 w-12 sm:h-14 sm:w-14 bg-blue-100 rounded-xl flex items-center justify-center mb-3 sm:mb-4"
@@ -293,11 +311,19 @@ const pageImage = 'https://drasassovet.cl/_astro/foto2.DQJT7_xQ_2uj8Ns.webp'
             Evaluación completa de salud con examen físico, diagnóstico y plan
             personalizado
           </p>
+          <div class="mt-auto">
+            <a
+              href="/servicios/consulta-general"
+              class="inline-flex items-center justify-center bg-blue-600 text-white px-4 py-2 rounded-full text-sm font-semibold shadow hover:bg-blue-700 transition"
+            >
+              Ver detalle
+            </a>
+          </div>
         </div>
 
         <!-- Vacunación -->
         <div
-          class="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-shadow"
+          class="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-shadow flex flex-col h-full"
         >
           <div
             class="h-14 w-14 bg-green-100 rounded-xl flex items-center justify-center mb-4"
@@ -323,11 +349,19 @@ const pageImage = 'https://drasassovet.cl/_astro/foto2.DQJT7_xQ_2uj8Ns.webp'
           <p class="text-gray-600">
             Programas personalizados de vacunación y planes de desparasitación
           </p>
+          <div class="mt-auto">
+            <a
+              href="/servicios/vacunacion"
+              class="inline-flex items-center justify-center bg-blue-600 text-white px-4 py-2 rounded-full text-sm font-semibold shadow hover:bg-blue-700 transition"
+            >
+              Ver detalle
+            </a>
+          </div>
         </div>
 
-        <!-- Urgencias -->
+        <!-- Toma de muestras -->
         <div
-          class="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-shadow"
+          class="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-shadow flex flex-col h-full"
         >
           <div
             class="h-14 w-14 bg-red-100 rounded-xl flex items-center justify-center mb-4"
@@ -343,21 +377,29 @@ const pageImage = 'https://drasassovet.cl/_astro/foto2.DQJT7_xQ_2uj8Ns.webp'
                 stroke-linecap="round"
                 stroke-linejoin="round"
                 stroke-width="2"
-                d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
+              ></path>
             </svg>
           </div>
           <h3 class="text-xl font-semibold text-primary mb-2">
-            Atención de urgencias
+            Toma de muestras
           </h3>
           <p class="text-gray-600">
-            Manejo inicial de emergencias y coordinación de traslados si es
-            necesario
+            Exámenes sanguíneos y dermatológicos, interpretación y diagnóstico
           </p>
+          <div class="mt-auto">
+            <a
+              href="/servicios/toma-de-muestras"
+              class="inline-flex items-center justify-center bg-blue-600 text-white px-4 py-2 rounded-full text-sm font-semibold shadow hover:bg-blue-700 transition"
+            >
+              Ver detalle
+            </a>
+          </div>
         </div>
 
         <!-- Preventivos -->
         <div
-          class="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-shadow"
+          class="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-shadow flex flex-col h-full"
         >
           <div
             class="h-14 w-14 bg-purple-100 rounded-xl flex items-center justify-center mb-4"
@@ -383,6 +425,89 @@ const pageImage = 'https://drasassovet.cl/_astro/foto2.DQJT7_xQ_2uj8Ns.webp'
           <p class="text-gray-600">
             Servicios de higiene, curaciones y toma de muestras en domicilio
           </p>
+          <div class="mt-auto">
+            <a
+              href="/servicios/cuidados-preventivos"
+              class="inline-flex items-center justify-center bg-blue-600 text-white px-4 py-2 rounded-full text-sm font-semibold shadow hover:bg-blue-700 transition"
+            >
+              Ver detalle
+            </a>
+          </div>
+        </div>
+
+        <!-- Implantación de Microchip -->
+        <div
+          class="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-shadow flex flex-col h-full"
+        >
+          <div
+            class="h-14 w-14 bg-purple-100 rounded-xl flex items-center justify-center mb-4"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-8 w-8 text-purple-600"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"
+              ></path>
+            </svg>
+          </div>
+          <h3 class="text-xl font-semibold text-primary mb-2">
+            Implantación de Microchip
+          </h3>
+          <p class="text-gray-600">
+            Identificación permanente de tu mascota con registro oficial, sin
+            salir de casa
+          </p>
+          <div class="mt-auto">
+            <a
+              href="/servicios/implantacion-microchip"
+              class="inline-flex items-center justify-center bg-blue-600 text-white px-4 py-2 rounded-full text-sm font-semibold shadow hover:bg-blue-700 transition"
+            >
+              Ver detalle
+            </a>
+          </div>
+        </div>
+
+        <!-- Eutanasia -->
+        <div
+          class="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-shadow flex flex-col h-full"
+        >
+          <div
+            class="h-14 w-14 bg-purple-100 rounded-xl flex items-center justify-center mb-4"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-8 w-8 text-purple-600"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"
+              ></path>
+            </svg>
+          </div>
+          <h3 class="text-xl font-semibold text-primary mb-2">Eutanasia</h3>
+          <p class="text-gray-600">
+            Servicio humanitario con acompañamiento y respeto en tu propio hogar
+          </p>
+          <div class="mt-auto">
+            <a
+              href="/servicios/eutanasia"
+              class="inline-flex items-center justify-center bg-blue-600 text-white px-4 py-2 rounded-full text-sm font-semibold shadow hover:bg-blue-700 transition"
+            >
+              Ver detalle
+            </a>
+          </div>
         </div>
       </div>
 
@@ -401,69 +526,47 @@ const pageImage = 'https://drasassovet.cl/_astro/foto2.DQJT7_xQ_2uj8Ns.webp'
   </section>
 
   <!-- PROCESO Y AGENDA -->
-  <section class="bg-white py-12">
+  <section class="bg-gray-50 py-12">
     <div class="container mx-auto px-4 max-w-4xl">
-      <h2 class="text-2xl font-semibold mb-4">Cómo agendar</h2>
+      <h2 class="text-2xl font-semibold mb-4">Cómo agendar y qué esperar</h2>
       <ol class="list-decimal list-inside text-gray-700 space-y-2">
         <li>
-          Envíanos un mensaje por WhatsApp (+56 9 5404 7440) con el motivo y
-          dirección.
+          <strong>Contacta por WhatsApp</strong> (+56 9 5404 7440) con una breve
+          descripción del motivo de la visita.
         </li>
-        <li>Confirmamos horario y el equipo encargado de la visita.</li>
         <li>
-          Realizamos la atención en domicilio y te entregamos indicaciones de
-          seguimiento.
+          <strong>Confirmación</strong> de horario y dirección; indicamos tiempo
+          aproximado de llegada a Olivar.
+        </li>
+        <li>
+          <strong>Visita en domicilio</strong> con equipo completo para diagnóstico
+          y tratamiento inicial.
         </li>
       </ol>
     </div>
   </section>
 
-  <!-- TESTIMONIOS -->
-  <!-- <section class="py-12 bg-gray-50">
-    <div class="container mx-auto px-4 max-w-3xl">
-      <h2 class="text-2xl font-semibold mb-6">
-        Opiniones de clientes en Machalí
-      </h2>
-      <div class="space-y-4 text-gray-700">
-        <blockquote class="border-l-4 border-cyan-400 pl-4 italic">
-          "Muy satisfecha con la visita a domicilio. La Dra. explicó todo y mi
-          gato quedó tranquilo." — María, Machalí
-        </blockquote>
-        <blockquote class="border-l-4 border-cyan-400 pl-4 italic">
-          "Atención rápida y profesional. Recomendados." — Luis, Machalí
-        </blockquote>
-      </div>
-    </div>
-  </section> -->
-
   <!-- FAQ VISIBLE -->
   <section class="py-12">
     <div class="container mx-auto px-4 max-w-4xl">
-      <h2 class="text-2xl font-semibold mb-4">
-        Preguntas frecuentes (Machalí)
-      </h2>
+      <h2 class="text-2xl font-semibold mb-4">Preguntas frecuentes (Olivar)</h2>
       <div class="space-y-3 text-gray-700">
         <details class="bg-gray-50 p-4 rounded">
-          <summary class="font-medium">¿Atienden urgencias nocturnas?</summary>
+          <summary class="font-medium"
+            >¿Cubren toda la comuna de Olivar?</summary
+          >
           <div class="mt-2 text-sm">
-            Atendemos urgencias en horario limitado; para casos críticos
-            coordinamos traslado a centros de urgencia.
-          </div>
-        </details>
-
-        <details class="bg-gray-50 p-4 rounded">
-          <summary class="font-medium">¿Cuál es el costo de la visita?</summary>
-          <div class="mt-2 text-sm">
-            El domicilio a Machalí tiene un costo fijo de $17.000 .
+            Sí, cubrimos Olivar Alto, Olivar Bajo, Gultro y sectores aledaños.
           </div>
         </details>
 
         <details class="bg-gray-50 p-4 rounded">
           <summary class="font-medium"
-            >¿A cuántas zonas de Machalí llegan?</summary
+            >¿Realizan toma de muestras en Olivar?</summary
           >
           <div class="mt-2 text-sm">
-            Cubrimos la mayoría de sectores de Machalí.
+            Sí, realizamos toma de exámenes sanguíneos y dermatológicos en
+            domicilio, con interpretación y diagnóstico profesional.
           </div>
         </details>
       </div>
@@ -476,32 +579,29 @@ const pageImage = 'https://drasassovet.cl/_astro/foto2.DQJT7_xQ_2uj8Ns.webp'
       "@context": "https://schema.org",
       "@type": "VeterinaryCare",
       "name": "Veterinaria Fernanda Sasso",
-      "url": "https://www.drasassovet.cl/machali",
+      "url": "https://www.drasassovet.cl/veterinaria-a-domicilio-olivar",
       "service": [
         {
           "@type": "Service",
           "name": "Consulta veterinaria a domicilio",
-          "description": "Valoración y diagnóstico en domicilio en Machalí."
+          "description": "Evaluación y diagnóstico en el domicilio en Olivar."
         },
         {
           "@type": "Service",
           "name": "Vacunación a domicilio",
-          "description": "Aplicación de vacunas y programas de prevención en Machalí."
+          "description": "Aplicación de vacunas y planes de prevención para perros y gatos en Olivar."
         },
         {
           "@type": "Service",
-          "name": "Atención de urgencias inicial",
-          "description": "Manejo inicial de urgencias en el hogar y coordinación de traslado si es necesario."
+          "name": "Toma de muestras",
+          "description": "Toma de exámenes sanguíneos y dermatológicos, interpretación de exámenes y diagnóstico de tratamientos respectivos."
         }
       ]
     }
   </script>
 
   <!-- CONTACTO RÁPIDO -->
-  <section
-    class="py-8 sm:py-16 bg-gradient-to-br from-blue-600 to-blue-800"
-    id="contacto"
-  >
+  <section class="py-8 sm:py-16 bg-gray-50" id="contacto">
     <div class="container mx-auto px-4">
       <div class="max-w-4xl mx-auto text-center">
         <div
@@ -510,7 +610,7 @@ const pageImage = 'https://drasassovet.cl/_astro/foto2.DQJT7_xQ_2uj8Ns.webp'
           <h2
             class="text-2xl sm:text-3xl md:text-4xl font-bold text-primary mb-3 sm:mb-4"
           >
-            ¿Necesitas atención veterinaria en Machalí?
+            ¿Necesitas atención veterinaria en Olivar?
           </h2>
           <p class="text-lg text-gray-600 mb-8">
             Estamos listos para atender a tu mascota. Contáctanos ahora y agenda
@@ -538,7 +638,7 @@ const pageImage = 'https://drasassovet.cl/_astro/foto2.DQJT7_xQ_2uj8Ns.webp'
               </div>
               <h3 class="font-semibold text-lg mb-2">Cobertura total</h3>
               <p class="text-gray-600">
-                Servicio disponible en toda la comuna de Machalí
+                Servicio disponible en toda la comuna de Olivar
               </p>
             </div>
           </div>
@@ -579,3 +679,39 @@ const pageImage = 'https://drasassovet.cl/_astro/foto2.DQJT7_xQ_2uj8Ns.webp'
 
   <Footeer />
 </Layout>
+<style>
+  .swiper-pagination-bullet {
+    background-color: #00539c;
+  }
+  .swiper-pagination-bullet-active {
+    background-color: #ff5733;
+  }
+</style>
+
+<script>
+  import Swiper from 'swiper'
+  import { Navigation, Pagination, Autoplay } from 'swiper/modules'
+
+  document.addEventListener('DOMContentLoaded', function () {
+    const swiper = new Swiper('.servicios-swiper', {
+      modules: [Navigation, Pagination, Autoplay],
+      slidesPerView: 'auto',
+      spaceBetween: 20,
+      centeredSlides: true,
+      loop: true,
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev'
+      },
+      autoplay: {
+        delay: 3000,
+        disableOnInteraction: false
+      },
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+        type: 'bullets'
+      }
+    })
+  })
+</script>
